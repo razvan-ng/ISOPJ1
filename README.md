@@ -1,6 +1,6 @@
 # PROJECTE 1
 
-Implantació i Gestió d'un sistema Ubuntu Linux amb tecnologia ABP.
+## Implantació i Gestió d'un sistema Ubuntu Linux amb tecnologia ABP.
 
 ## Contingut
 
