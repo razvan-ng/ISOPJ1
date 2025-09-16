@@ -10,10 +10,10 @@ Implantació i Gestió d'un sistema Ubuntu Linux amb tecnologia ABP.
 - SP4. Configuració del Programari de Base i Sistemes d’Emmagatzematge en Ubuntu.
 - SP5. Monitoratge, Auditories i Programari Client/Servidor.
 
-## Uso
+## Ús
 
-Este repositorio está preparado para ser publicado con GitHub Pages.  
-Puedes ver la versión web pública en:  
+Aquest repositori està preparat per ser publicat amb Github Pages. 
+Pot veure la versió pública web publicada a:  
 https://mireiaconsarnau.github.io/machine_learning/
 
 ## Licencia
