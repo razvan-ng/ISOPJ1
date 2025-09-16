@@ -3,6 +3,8 @@ layout: default
 title: "PROJECTE 1"
 ---
 
+## Implementació i Gestió d’un Sistema Ubuntu Linux amb Tecnologia ABP.
+
 ## Contingut
 
 - SP1. Instal·lació, Configuració Inicial i Programari de Base.
