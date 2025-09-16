@@ -3,7 +3,7 @@ title: "SPRINT 1"
 ---
 
 
-![Imatge manual](/ISOPJ1/SP1/san-juan-mountains.avif)
+![Imatge](/ISOPJ1/SP1/assets/pexels-souvenirpixels-417074.jpg)
 
 
 # A1. SPRINT 1: INSTAL·LACIÓ I CONFIGURACIÓ INICIAL.
