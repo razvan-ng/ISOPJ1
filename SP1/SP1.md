@@ -4,6 +4,9 @@ title: "SPRINT 1"
 ---
 
 
+![Imatge manual](ISOPJ1/SP1/san-juan-mountains.avif)
+
+
 # A1. SPRINT 1: INSTAL·LACIÓ I CONFIGURACIÓ INICIAL.
 
 ## RA.1
