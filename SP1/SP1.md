@@ -1,1 +1,3 @@
+# A1. SPRINT 1: INSTAL·LACIÓ I CONFIGURACIÓ INICIAL.
 
+## RA.1 - Instal·lació SO
