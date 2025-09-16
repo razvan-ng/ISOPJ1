@@ -1,9 +1,7 @@
 ---
 layout: default
-title: "PROJECTE 1"
+title: "PROJECTE 1 - Implementació i Gestió d’un Sistema Ubuntu Linux amb Tecnologia ABP."
 ---
-
-## Implementació i Gestió d’un Sistema Ubuntu Linux amb Tecnologia ABP.
 
 ## Contingut
 
