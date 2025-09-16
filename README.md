@@ -14,14 +14,12 @@ Implantació i Gestió d'un sistema Ubuntu Linux amb tecnologia ABP.
 
 Aquest repositori està preparat per ser publicat amb Github Pages. 
 Pot veure la versió pública web publicada a:  
-https://mireiaconsarnau.github.io/machine_learning/
+https://razvan-ng.github.io/ISOPJ1/
 
-## Licencia
+## Llicència
 
-El contenido está bajo licencia [Creative Commons BY-NC-SA 3.0 ES](LICENSE.md).
+El contingut esta sota llicència [Creative Commons BY-NC-SA 3.0 ES](LICENSE.md).
 
 
 ---
-
-© 2025 Mireia Consarnau
 
