@@ -1,10 +1,4 @@
----
-title: "SPRINT 1"
----
-
-
 ![Imatge](/ISOPJ1/SP1/assets/pexels-souvenirpixels-417074.jpg)
-
 
 # A1. SPRINT 1: INSTAL·LACIÓ I CONFIGURACIÓ INICIAL.
 
