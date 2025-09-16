@@ -11,11 +11,11 @@ title: "PROJECTE 1"
 - SP4. Configuració del Programari de Base i Sistemes d’Emmagatzematge en Ubuntu.
 - SP5. Monitoratge, Auditories i Programari Client/Servidor.
   
-## Licencia
+## Llicència 
 
-El contenido está bajo licencia [Creative Commons BY-NC-SA 3.0 ES](LICENSE.md).
+Contingut sota llicència [Creative Commons BY-NC-SA 3.0 ES](LICENSE.md).
 
-## Contenido del curso
+## Contingut del curs
 
 ### [Sprint 1. Instal·lació, Configuració inicial i Programari de Base.](SP1/SP1.md)  
 ### [Sprint 2. Instal·lació. Configuració de Programari de Base i Gestió de Fitxers.](SP2/SP2.md)  
