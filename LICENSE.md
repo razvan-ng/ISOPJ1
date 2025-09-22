@@ -10,7 +10,7 @@ Aquesta llicència permet que altres comparteixin, copiïn i distribueixin la te
 
 - Reconeixin l’autoria original.
 - No utilitzin l’obra amb fins comercials.
-- nDistribueixin les obres derivades sota la mateixa llicència.
+- Distribueixin les obres derivades sota la mateixa llicència.
 
 ---
 
