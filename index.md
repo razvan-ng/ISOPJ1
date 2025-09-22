@@ -13,7 +13,7 @@ title: "PROJECTE 1 - Implementació i Gestió d’un Sistema Ubuntu Linux amb Te
   
 ## Llicència 
 
-Contingut sota llicència [Creative Commons BY-NC-SA 3.0 ES](LICENSE.md).
+Contingut sota llicència [Creative Commons BY-NC-SA 4.0](LICENSE.md).
 
 ## Contingut del curs
 
