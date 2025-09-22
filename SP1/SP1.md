@@ -5,7 +5,7 @@ title: "SPRINT 1: INSTAL·LACIÓ I CONFIGURACIÓ INICIAL."
 
 ## Virtualització i instal·lació del SO Ubuntu.
 Iniciem Virtualbox i creem una màquina virtual.
-![inici virtualbox](/assets/Virtualització i instal·lació del SO Ubuntu/1.jpg)
+![inici virtualbox](SP1/assets/Virtualitzacio i instal·lació del SO Ubuntu)
 ## Llicenciament.
 ## Gestors d'arrencada per a instal·lacions DUALS.
 ## Punts de restauració.
