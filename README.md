@@ -18,7 +18,7 @@ https://razvan-ng.github.io/ISOPJ1/
 
 ## Llicència
 
-El contingut esta sota llicència [Creative Commons BY-NC-SA 3.0 ES](LICENSE.md).
+El contingut esta sota llicència [Creative Commons BY-NC-SA 4.0](LICENSE.md).
 
 
 ---
