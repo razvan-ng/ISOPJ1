@@ -41,6 +41,12 @@ Una vegada arribem a l'apartat de típus d'instal·lació triem "Something else"
 
 ![inici install](/assets/Virtualitzacio i instal·lació del SO Ubuntu/7.png)
 
+Creem una nova taula de partició a "New Partition Table" per poder particionar el disc i fem click a continuar.
+
+![inici install](/assets/Virtualitzacio i instal·lació del SO Ubuntu/8.png)
+
+
+
 
 
 
