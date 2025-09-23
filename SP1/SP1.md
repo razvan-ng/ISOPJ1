@@ -63,12 +63,12 @@ El seu llicenciament garanteix les quatre llibertats fonamentals:
 3. **Redistribuir** còpies.  
 4. **Millorar-lo** i compartir les modificacions.  
 
-## Tipus de llicències presents a Ubuntu
+### Tipus de llicències presents a Ubuntu
 - **GPL (General Public License):** llicència copyleft que obliga a mantenir la llibertat en obres derivades.  
 - **LGPL (Lesser GPL):** pensada per biblioteques; permet combinar amb programari propietari.  
 - **Permissives (MIT, BSD, Apache):** donen flexibilitat i permeten integrar amb codi privatiu.  
 
-## Aspectes legals
+### Aspectes legals
 Tot i que està protegit per **drets d’autor**, les llicències asseguren que qualsevol usuari pugui fer ús, estudiar, redistribuir i modificar el programari dins el marc legal.  
 
 ## Gestors d'arrencada per a instal·lacions DUALS.
