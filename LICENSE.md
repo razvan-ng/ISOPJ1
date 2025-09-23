@@ -2,6 +2,8 @@
 
 Aquest treball està sota llicència Creative Commons [Llicència Creative Commons Reconeixement - No Comercial - Compartir Igual 4.0 Internacional (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
+<img width="903" height="172" alt="image-removebg-preview" src="https://github.com/user-attachments/assets/d3cab7b0-ad75-44c5-99f7-7ada778a1452" />
+
 ---
 
 ## Resum
