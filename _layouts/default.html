@@ -30,24 +30,37 @@
     }
 
     .container {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
+      max-width: 900px;
       margin: 20px auto;
-      max-width: 1000px;
+      padding: 20px;
+      text-align: left;
     }
 
     .dancer {
-      width: 140px;
-      height: 140px;
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 250px;
+      height: auto;
       image-rendering: pixelated;
       animation: dance 0.6s infinite alternate;
+      z-index: 1;
+    }
+
+    .dancer.left {
+      left: 0;
+    }
+
+    .dancer.right {
+      right: 0;
     }
 
     .content {
-      flex: 1;
+      position: relative;
+      z-index: 2;
+      background: rgba(0,0,0,0.7);
+      border-radius: 12px;
       padding: 20px;
-      text-align: left;
     }
 
     nav ul {
@@ -87,7 +100,7 @@
 
     @keyframes dance {
       from { transform: rotate(-5deg) translateY(0); }
-      to   { transform: rotate(5deg) translateY(-10px); }
+      to   { transform: rotate(5deg) translateY(-15px); }
     }
   </style>
 </head>
@@ -99,14 +112,14 @@
     {% endif %}
   </header>
 
-  <div class="container">
-    <img src="{{ '/assetscss/ricardo.gif' | relative_url }}" alt="Ricardo esquerra" class="dancer">
+  <!-- Ricardo ballant fixat als costats -->
+  <img src="{{ '/assetscss/ricardo.gif' | relative_url }}" alt="Ricardo esquerra" class="dancer left">
+  <img src="{{ '/assetscss/ricardo.gif' | relative_url }}" alt="Ricardo dreta" class="dancer right">
 
+  <div class="container">
     <div class="content">
       {{ content }}
     </div>
-
-    <img src="{{ '/assetscss/ricardo.gif' | relative_url }}" alt="Ricardo dreta" class="dancer">
   </div>
 
   <footer>
