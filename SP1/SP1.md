@@ -45,8 +45,19 @@ Creem una nova taula de partició a "New Partition Table" per poder particionar 
 
 ![inici install](/assets/Virtualitzacio i instal·lació del SO Ubuntu/8.png)
 
+Particionem el disc segons les nostres necessitats. La màquina virtual emprada té un disc de 80GB i 8 GB de RAM. Amb aquesta memòria no és necessari una partició swap molt gran, així que li donem 4GB per anar be. Les particions / i /home són de 25GB i 15GB respectivament ja que només s'utilitzaran programes lleugers i documents de text.
+
+<img width="1308" height="912" alt="image" src="https://github.com/user-attachments/assets/89fa206a-6346-47cb-a715-4e8079e8fe41" />
+
+A continuació triem zona horària i configurem el nostre usuari. Esperem a que finalitzi el procés d'instal·lació.
+
+<img width="1308" height="912" alt="image" src="https://github.com/user-attachments/assets/2cf5a3e1-9df6-4428-94e4-deb1fec45953" />
 
 
+
+
+
+<img width="1308" height="912" alt="image" src="https://github.com/user-attachments/assets/915ab796-7369-425a-a7a1-e2fdd6544c06" />
 
 
 
