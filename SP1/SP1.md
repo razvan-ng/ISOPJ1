@@ -75,7 +75,3 @@ Tot i que està protegit per **drets d’autor**, les llicències asseguren que 
 ## Punts de restauració.
 ## Configuració de la xarxa.
 ## Comandes generals i instal·lacions.
-
-
-[Inici](ISOPJ1/index.md)  
-
