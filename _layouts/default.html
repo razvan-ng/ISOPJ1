@@ -1,28 +1,116 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="ca">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{{ page.title }}</title>
-  <link rel="stylesheet" href="/machine_learning/assets/css/custom.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | default: site.title }}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #111;
+      color: #fff;
+      font-family: 'Press Start 2P', cursive;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 10px;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    p.subtitle {
+      font-size: 12px;
+      color: #aaa;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      margin: 20px auto;
+      max-width: 1000px;
+    }
+
+    .dancer {
+      width: 140px;
+      height: 140px;
+      image-rendering: pixelated;
+      animation: dance 0.6s infinite alternate;
+    }
+
+    .content {
+      flex: 1;
+      padding: 20px;
+      text-align: left;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 30px 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    nav ul li {
+      background: #222;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+      transition: transform 0.2s;
+    }
+
+    nav ul li:hover {
+      transform: scale(1.05);
+      background: #333;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 12px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 10px;
+      color: #888;
+    }
+
+    @keyframes dance {
+      from { transform: rotate(-5deg) translateY(0); }
+      to   { transform: rotate(5deg) translateY(-10px); }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>{{ page.title | default: site.title }}</h1>
+    {% if page.subtitle %}
+      <p class="subtitle">{{ page.subtitle }}</p>
+    {% endif %}
+  </header>
 
-  <h1>{{ page.title }}</h1>
+  <div class="container">
+    <img src="https://media.tenor.com/7cWJ3p8oC-wAAAAj/ricardo-milos.gif" alt="Ricardo esquerra" class="dancer">
 
-  {{ content }}
+    <div class="content">
+      {{ content }}
+    </div>
 
-  <footer class="license">
-    © 2025 Razvan-Andrei Nastasa Ghitau  
-    <br/>
-    Material sota llicència
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0">Creative Commons BY-NC-SA 4.0</a>
-    <br/>
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0">
-      <img src="https://i.creativecommons.org/l/by-nc-sa/3.0/es/88x31.png" alt="Llicència CC BY-NC-SA 4.0" />
-    </a>
+    <img src="https://media.tenor.com/7cWJ3p8oC-wAAAAj/ricardo-milos.gif" alt="Ricardo dreta" class="dancer">
+  </div>
+
+  <footer>
+    <p>Contingut sota llicència Creative Commons BY-NC-SA 4.0</p>
   </footer>
-
 </body>
 </html>
-
