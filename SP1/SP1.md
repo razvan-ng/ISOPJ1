@@ -53,19 +53,6 @@ A continuació triem zona horària i configurem el nostre usuari. Esperem a que 
 
 <img width="1308" height="912" alt="image" src="https://github.com/user-attachments/assets/2cf5a3e1-9df6-4428-94e4-deb1fec45953" />
 
-
-
-
-
-<img width="1308" height="912" alt="image" src="https://github.com/user-attachments/assets/915ab796-7369-425a-a7a1-e2fdd6544c06" />
-
-
-
-
-
-
-
-
 ## Llicenciament.
 ## Gestors d'arrencada per a instal·lacions DUALS.
 ## Punts de restauració.
