@@ -54,7 +54,6 @@ A continuació triem zona horària i configurem el nostre usuari. Esperem a que 
 <img width="1308" height="912" alt="image" src="https://github.com/user-attachments/assets/2cf5a3e1-9df6-4428-94e4-deb1fec45953" />
 
 ## Llicenciament.
-# Llicenciament d’Ubuntu
 
 Ubuntu és una distribució **GNU/Linux** de programari **lliure i de codi obert**.  
 El seu llicenciament garanteix les quatre llibertats fonamentals:
