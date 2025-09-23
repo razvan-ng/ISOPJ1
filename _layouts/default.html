@@ -12,7 +12,7 @@
       font-family: 'Press Start 2P', cursive;
       margin: 0;
       padding: 0;
-      overflow: hidden; /* evitar scroll per moviment */
+      overflow: hidden; /* evitar scroll pel moviment */
     }
 
     header {
@@ -73,48 +73,70 @@
     /* Estil comú pels Ricardos */
     .dancer {
       position: absolute;
-      width: 200px;
+      width: 180px;
       height: auto;
       image-rendering: pixelated;
       z-index: 1;
       animation: dance 0.6s infinite alternate;
     }
 
-    /* Animacions de flotació amb durades diferents */
-    .d1 { animation: floatX1 12s linear infinite alternate,
-                     floatY1 9s ease-in-out infinite alternate,
-                     dance 0.6s infinite alternate; }
-    .d2 { animation: floatX2 15s linear infinite alternate,
-                     floatY2 11s ease-in-out infinite alternate,
-                     dance 0.6s infinite alternate; }
-    .d3 { animation: floatX3 18s linear infinite alternate,
-                     floatY3 13s ease-in-out infinite alternate,
-                     dance 0.6s infinite alternate; }
-    .d4 { animation: floatX4 20s linear infinite alternate,
-                     floatY4 15s ease-in-out infinite alternate,
-                     dance 0.6s infinite alternate; }
-    .d5 { animation: floatX5 22s linear infinite alternate,
-                     floatY5 17s ease-in-out infinite alternate,
-                     dance 0.6s infinite alternate; }
+    /* Animacions independents */
+    .d1 {
+      top: 5%;
+      left: 5%;
+      animation: move1 18s linear infinite alternate,
+                 dance 0.6s infinite alternate;
+    }
+    .d2 {
+      top: 60%;
+      left: 10%;
+      animation: move2 22s linear infinite alternate,
+                 dance 0.6s infinite alternate;
+    }
+    .d3 {
+      top: 20%;
+      left: 70%;
+      animation: move3 20s linear infinite alternate,
+                 dance 0.6s infinite alternate;
+    }
+    .d4 {
+      top: 75%;
+      left: 50%;
+      animation: move4 25s linear infinite alternate,
+                 dance 0.6s infinite alternate;
+    }
+    .d5 {
+      top: 40%;
+      left: 30%;
+      animation: move5 30s linear infinite alternate,
+                 dance 0.6s infinite alternate;
+    }
 
-    @keyframes floatX1 { from { left: 0; } to { left: calc(100% - 200px); } }
-    @keyframes floatY1 { from { top: 0; } to { top: calc(100% - 200px); } }
-
-    @keyframes floatX2 { from { left: 20%; } to { left: 70%; } }
-    @keyframes floatY2 { from { top: 10%; } to { top: 80%; } }
-
-    @keyframes floatX3 { from { left: 10%; } to { left: 80%; } }
-    @keyframes floatY3 { from { top: 20%; } to { top: 70%; } }
-
-    @keyframes floatX4 { from { left: 5%; } to { left: 85%; } }
-    @keyframes floatY4 { from { top: 0; } to { top: 90%; } }
-
-    @keyframes floatX5 { from { left: 15%; } to { left: 75%; } }
-    @keyframes floatY5 { from { top: 30%; } to { top: 60%; } }
+    /* Keyframes amb recorreguts variats */
+    @keyframes move1 {
+      from { transform: translate(0, 0) rotate(-5deg) scale(1); }
+      to   { transform: translate(400px, 300px) rotate(5deg) scale(1.05); }
+    }
+    @keyframes move2 {
+      from { transform: translate(0, 0) rotate(5deg) scale(1); }
+      to   { transform: translate(500px, -200px) rotate(-5deg) scale(1.05); }
+    }
+    @keyframes move3 {
+      from { transform: translate(0, 0) rotate(-5deg) scale(1); }
+      to   { transform: translate(-450px, 250px) rotate(5deg) scale(1.05); }
+    }
+    @keyframes move4 {
+      from { transform: translate(0, 0) rotate(5deg) scale(1); }
+      to   { transform: translate(300px, -300px) rotate(-5deg) scale(1.05); }
+    }
+    @keyframes move5 {
+      from { transform: translate(0, 0) rotate(-5deg) scale(1); }
+      to   { transform: translate(-350px, -250px) rotate(5deg) scale(1.05); }
+    }
 
     @keyframes dance {
-      from { transform: rotate(-5deg) scale(1); }
-      to   { transform: rotate(5deg) scale(1.05); }
+      from { transform: scale(1) rotate(-5deg); }
+      to   { transform: scale(1.05) rotate(5deg); }
     }
 
     nav ul {
@@ -163,7 +185,7 @@
     {% endif %}
   </header>
 
-  <!-- 5 Ricardos ballant pel fons -->
+  <!-- 5 Ricardos escampats -->
   <img src="{{ '/assetscss/ricardo.gif' | relative_url }}" alt="Ricardo 1" class="dancer d1">
   <img src="{{ '/assetscss/ricardo.gif' | relative_url }}" alt="Ricardo 2" class="dancer d2">
   <img src="{{ '/assetscss/ricardo.gif' | relative_url }}" alt="Ricardo 3" class="dancer d3">
@@ -191,11 +213,15 @@
 
   <script>
     const music = document.getElementById('bg-music');
+    const btn = document.querySelector('.music-control');
+
     function toggleMusic() {
       if (music.paused) {
         music.play();
+        btn.textContent = "⏸ Pausa Música";
       } else {
         music.pause();
+        btn.textContent = "▶️ Reprodueix Música";
       }
     }
   </script>
