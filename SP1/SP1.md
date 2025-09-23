@@ -57,6 +57,9 @@ A continuació triem zona horària i configurem el nostre usuari. Esperem a que 
 En aquest material he emprat la llicència 4.0 de Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International, la qual permet copiar, redistribuïr, transformar i reconstuir el material.
 
 Per poder fer-ho s'ha de donar crèdits al autor pertinent, no es pot fer servir en fins comercials i/o per treure-li cap rendiment econòmic i en cas de que s'adapti el material presentat s'ha de compartir amb la mateixa llicència.
+
+<img width="903" height="172" alt="image-removebg-preview" src="https://github.com/user-attachments/assets/c043f7b8-fa13-49e2-9738-2d3bbcae6f89" />
+
 ## Gestors d'arrencada per a instal·lacions DUALS.
 ## Punts de restauració.
 ## Configuració de la xarxa.
