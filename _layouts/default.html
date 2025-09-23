@@ -47,27 +47,70 @@
       padding: 20px;
     }
 
-    /* Ricardo flotant per la pantalla */
+    /* Botó música */
+    .music-control {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #ff0066;
+      color: #fff;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 12px;
+      padding: 12px 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 3;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+      transition: transform 0.2s;
+    }
+
+    .music-control:hover {
+      transform: scale(1.1);
+      background: #ff3385;
+    }
+
+    /* Estil comú pels Ricardos */
     .dancer {
       position: absolute;
-      width: 220px;
+      width: 200px;
       height: auto;
       image-rendering: pixelated;
-      animation: floatX 12s linear infinite alternate,
-                 floatY 8s ease-in-out infinite alternate,
-                 dance 0.6s infinite alternate;
       z-index: 1;
+      animation: dance 0.6s infinite alternate;
     }
 
-    @keyframes floatX {
-      from { left: 0; }
-      to   { left: calc(100% - 220px); }
-    }
+    /* Animacions de flotació amb durades diferents */
+    .d1 { animation: floatX1 12s linear infinite alternate,
+                     floatY1 9s ease-in-out infinite alternate,
+                     dance 0.6s infinite alternate; }
+    .d2 { animation: floatX2 15s linear infinite alternate,
+                     floatY2 11s ease-in-out infinite alternate,
+                     dance 0.6s infinite alternate; }
+    .d3 { animation: floatX3 18s linear infinite alternate,
+                     floatY3 13s ease-in-out infinite alternate,
+                     dance 0.6s infinite alternate; }
+    .d4 { animation: floatX4 20s linear infinite alternate,
+                     floatY4 15s ease-in-out infinite alternate,
+                     dance 0.6s infinite alternate; }
+    .d5 { animation: floatX5 22s linear infinite alternate,
+                     floatY5 17s ease-in-out infinite alternate,
+                     dance 0.6s infinite alternate; }
 
-    @keyframes floatY {
-      from { top: 0; }
-      to   { top: calc(100% - 220px); }
-    }
+    @keyframes floatX1 { from { left: 0; } to { left: calc(100% - 200px); } }
+    @keyframes floatY1 { from { top: 0; } to { top: calc(100% - 200px); } }
+
+    @keyframes floatX2 { from { left: 20%; } to { left: 70%; } }
+    @keyframes floatY2 { from { top: 10%; } to { top: 80%; } }
+
+    @keyframes floatX3 { from { left: 10%; } to { left: 80%; } }
+    @keyframes floatY3 { from { top: 20%; } to { top: 70%; } }
+
+    @keyframes floatX4 { from { left: 5%; } to { left: 85%; } }
+    @keyframes floatY4 { from { top: 0; } to { top: 90%; } }
+
+    @keyframes floatX5 { from { left: 15%; } to { left: 75%; } }
+    @keyframes floatY5 { from { top: 30%; } to { top: 60%; } }
 
     @keyframes dance {
       from { transform: rotate(-5deg) scale(1); }
@@ -120,8 +163,21 @@
     {% endif %}
   </header>
 
-  <!-- Ricardo ballant flotant per tota la pantalla -->
-  <img src="{{ '/assetscss/ricardo.gif' | relative_url }}" alt="Ricardo ballant" class="dancer">
+  <!-- 5 Ricardos ballant pel fons -->
+  <img src="{{ '/assetscss/ricardo.gif' | relative_url }}" alt="Ricardo 1" class="dancer d1">
+  <img src="{{ '/assetscss/ricardo.gif' | relative_url }}" alt="Ricardo 2" class="dancer d2">
+  <img src="{{ '/assetscss/ricardo.gif' | relative_url }}" alt="Ricardo 3" class="dancer d3">
+  <img src="{{ '/assetscss/ricardo.gif' | relative_url }}" alt="Ricardo 4" class="dancer d4">
+  <img src="{{ '/assetscss/ricardo.gif' | relative_url }}" alt="Ricardo 5" class="dancer d5">
+
+  <!-- Música de fons -->
+  <audio id="bg-music" autoplay loop>
+    <source src="{{ '/assetscss/music.mp3' | relative_url }}" type="audio/mpeg">
+    El teu navegador no suporta àudio.
+  </audio>
+
+  <!-- Botó per controlar la música -->
+  <button class="music-control" onclick="toggleMusic()">⏯ Música</button>
 
   <div class="container">
     <div class="content">
@@ -132,5 +188,16 @@
   <footer>
     <p>Contingut sota llicència Creative Commons BY-NC-SA 4.0</p>
   </footer>
+
+  <script>
+    const music = document.getElementById('bg-music');
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+      } else {
+        music.pause();
+      }
+    }
+  </script>
 </body>
 </html>
