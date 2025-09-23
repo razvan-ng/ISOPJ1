@@ -54,11 +54,23 @@ A continuació triem zona horària i configurem el nostre usuari. Esperem a que 
 <img width="1308" height="912" alt="image" src="https://github.com/user-attachments/assets/2cf5a3e1-9df6-4428-94e4-deb1fec45953" />
 
 ## Llicenciament.
-En aquest material he emprat la llicència 4.0 de Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International, la qual permet copiar, redistribuïr, transformar i reconstuir el material.
+# Llicenciament d’Ubuntu
 
-Per poder fer-ho s'ha de donar crèdits al autor pertinent, no es pot fer servir en fins comercials i/o per treure-li cap rendiment econòmic i en cas de que s'adapti el material presentat s'ha de compartir amb la mateixa llicència.
+Ubuntu és una distribució **GNU/Linux** de programari **lliure i de codi obert**.  
+El seu llicenciament garanteix les quatre llibertats fonamentals:
 
-<img width="903" height="172" alt="image-removebg-preview" src="https://github.com/user-attachments/assets/c043f7b8-fa13-49e2-9738-2d3bbcae6f89" />
+1. **Utilitzar** el programari per a qualsevol finalitat.  
+2. **Estudiar** i adaptar-lo (accés al codi font).  
+3. **Redistribuir** còpies.  
+4. **Millorar-lo** i compartir les modificacions.  
+
+## Tipus de llicències presents a Ubuntu
+- **GPL (General Public License):** llicència copyleft que obliga a mantenir la llibertat en obres derivades.  
+- **LGPL (Lesser GPL):** pensada per biblioteques; permet combinar amb programari propietari.  
+- **Permissives (MIT, BSD, Apache):** donen flexibilitat i permeten integrar amb codi privatiu.  
+
+## Aspectes legals
+Tot i que està protegit per **drets d’autor**, les llicències asseguren que qualsevol usuari pugui fer ús, estudiar, redistribuir i modificar el programari dins el marc legal.  
 
 ## Gestors d'arrencada per a instal·lacions DUALS.
 ## Punts de restauració.
