@@ -70,73 +70,14 @@
       background: #ff3385;
     }
 
-    /* Estil comú pels Ricardos */
+    /* Ricardos */
     .dancer {
       position: absolute;
-      width: 180px;
+      width: 160px;
       height: auto;
       image-rendering: pixelated;
       z-index: 1;
-      animation: dance 0.6s infinite alternate;
-    }
-
-    /* Animacions independents */
-    .d1 {
-      top: 5%;
-      left: 5%;
-      animation: move1 18s linear infinite alternate,
-                 dance 0.6s infinite alternate;
-    }
-    .d2 {
-      top: 60%;
-      left: 10%;
-      animation: move2 22s linear infinite alternate,
-                 dance 0.6s infinite alternate;
-    }
-    .d3 {
-      top: 20%;
-      left: 70%;
-      animation: move3 20s linear infinite alternate,
-                 dance 0.6s infinite alternate;
-    }
-    .d4 {
-      top: 75%;
-      left: 50%;
-      animation: move4 25s linear infinite alternate,
-                 dance 0.6s infinite alternate;
-    }
-    .d5 {
-      top: 40%;
-      left: 30%;
-      animation: move5 30s linear infinite alternate,
-                 dance 0.6s infinite alternate;
-    }
-
-    /* Keyframes amb recorreguts variats */
-    @keyframes move1 {
-      from { transform: translate(0, 0) rotate(-5deg) scale(1); }
-      to   { transform: translate(400px, 300px) rotate(5deg) scale(1.05); }
-    }
-    @keyframes move2 {
-      from { transform: translate(0, 0) rotate(5deg) scale(1); }
-      to   { transform: translate(500px, -200px) rotate(-5deg) scale(1.05); }
-    }
-    @keyframes move3 {
-      from { transform: translate(0, 0) rotate(-5deg) scale(1); }
-      to   { transform: translate(-450px, 250px) rotate(5deg) scale(1.05); }
-    }
-    @keyframes move4 {
-      from { transform: translate(0, 0) rotate(5deg) scale(1); }
-      to   { transform: translate(300px, -300px) rotate(-5deg) scale(1.05); }
-    }
-    @keyframes move5 {
-      from { transform: translate(0, 0) rotate(-5deg) scale(1); }
-      to   { transform: translate(-350px, -250px) rotate(5deg) scale(1.05); }
-    }
-
-    @keyframes dance {
-      from { transform: scale(1) rotate(-5deg); }
-      to   { transform: scale(1.05) rotate(5deg); }
+      pointer-events: none;
     }
 
     nav ul {
@@ -186,11 +127,11 @@
   </header>
 
   <!-- 5 Ricardos escampats -->
-  <img src="{{ '/assetscss/ricardo.gif' | relative_url }}" alt="Ricardo 1" class="dancer d1">
-  <img src="{{ '/assetscss/ricardo.gif' | relative_url }}" alt="Ricardo 2" class="dancer d2">
-  <img src="{{ '/assetscss/ricardo.gif' | relative_url }}" alt="Ricardo 3" class="dancer d3">
-  <img src="{{ '/assetscss/ricardo.gif' | relative_url }}" alt="Ricardo 4" class="dancer d4">
-  <img src="{{ '/assetscss/ricardo.gif' | relative_url }}" alt="Ricardo 5" class="dancer d5">
+  <img src="{{ '/assetscss/ricardo.gif' | relative_url }}" alt="Ricardo 1" class="dancer" id="ric1">
+  <img src="{{ '/assetscss/ricardo.gif' | relative_url }}" alt="Ricardo 2" class="dancer" id="ric2">
+  <img src="{{ '/assetscss/ricardo.gif' | relative_url }}" alt="Ricardo 3" class="dancer" id="ric3">
+  <img src="{{ '/assetscss/ricardo.gif' | relative_url }}" alt="Ricardo 4" class="dancer" id="ric4">
+  <img src="{{ '/assetscss/ricardo.gif' | relative_url }}" alt="Ricardo 5" class="dancer" id="ric5">
 
   <!-- Música de fons -->
   <audio id="bg-music" autoplay loop>
@@ -212,9 +153,9 @@
   </footer>
 
   <script>
+    // Control música
     const music = document.getElementById('bg-music');
     const btn = document.querySelector('.music-control');
-
     function toggleMusic() {
       if (music.paused) {
         music.play();
@@ -224,6 +165,63 @@
         btn.textContent = "▶️ Reprodueix Música";
       }
     }
+
+    // Moviment dels Ricardos
+    const dancers = [
+      document.getElementById("ric1"),
+      document.getElementById("ric2"),
+      document.getElementById("ric3"),
+      document.getElementById("ric4"),
+      document.getElementById("ric5")
+    ];
+
+    const speeds = [];
+    const positions = [];
+
+    // Inicialitzar posicions i velocitats
+    dancers.forEach((d, i) => {
+      positions[i] = {
+        x: Math.random() * window.innerWidth * 0.8,
+        y: Math.random() * window.innerHeight * 0.8
+      };
+      speeds[i] = {
+        vx: (Math.random() * 2 + 1) * (Math.random() < 0.5 ? 1 : -1),
+        vy: (Math.random() * 2 + 1) * (Math.random() < 0.5 ? 1 : -1)
+      };
+    });
+
+    function animate() {
+      dancers.forEach((d, i) => {
+        const w = d.offsetWidth;
+        const h = d.offsetHeight;
+
+        positions[i].x += speeds[i].vx;
+        positions[i].y += speeds[i].vy;
+
+        // Rebot a les vores
+        if (positions[i].x <= 0 || positions[i].x + w >= window.innerWidth) {
+          speeds[i].vx *= -1;
+        }
+        if (positions[i].y <= 0 || positions[i].y + h >= window.innerHeight) {
+          speeds[i].vy *= -1;
+        }
+
+        d.style.left = positions[i].x + "px";
+        d.style.top = positions[i].y + "px";
+      });
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    // Reajustar quan es canvia la mida de la finestra
+    window.addEventListener("resize", () => {
+      dancers.forEach((d, i) => {
+        positions[i].x = Math.min(positions[i].x, window.innerWidth - d.offsetWidth);
+        positions[i].y = Math.min(positions[i].y, window.innerHeight - d.offsetHeight);
+      });
+    });
   </script>
 </body>
 </html>
