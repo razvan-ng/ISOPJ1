@@ -12,11 +12,14 @@
       font-family: 'Press Start 2P', cursive;
       margin: 0;
       padding: 0;
+      overflow: hidden; /* evitar scroll per moviment */
     }
 
     header {
       text-align: center;
       padding: 30px 10px;
+      position: relative;
+      z-index: 2;
     }
 
     h1 {
@@ -34,33 +37,41 @@
       margin: 20px auto;
       padding: 20px;
       text-align: left;
-    }
-
-    .dancer {
-      position: fixed;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 250px;
-      height: auto;
-      image-rendering: pixelated;
-      animation: dance 0.6s infinite alternate;
-      z-index: 1;
-    }
-
-    .dancer.left {
-      left: 0;
-    }
-
-    .dancer.right {
-      right: 0;
+      position: relative;
+      z-index: 2;
     }
 
     .content {
-      position: relative;
-      z-index: 2;
       background: rgba(0,0,0,0.7);
       border-radius: 12px;
       padding: 20px;
+    }
+
+    /* Ricardo flotant per la pantalla */
+    .dancer {
+      position: absolute;
+      width: 220px;
+      height: auto;
+      image-rendering: pixelated;
+      animation: floatX 12s linear infinite alternate,
+                 floatY 8s ease-in-out infinite alternate,
+                 dance 0.6s infinite alternate;
+      z-index: 1;
+    }
+
+    @keyframes floatX {
+      from { left: 0; }
+      to   { left: calc(100% - 220px); }
+    }
+
+    @keyframes floatY {
+      from { top: 0; }
+      to   { top: calc(100% - 220px); }
+    }
+
+    @keyframes dance {
+      from { transform: rotate(-5deg) scale(1); }
+      to   { transform: rotate(5deg) scale(1.05); }
     }
 
     nav ul {
@@ -96,11 +107,8 @@
       padding: 20px;
       font-size: 10px;
       color: #888;
-    }
-
-    @keyframes dance {
-      from { transform: rotate(-5deg) translateY(0); }
-      to   { transform: rotate(5deg) translateY(-15px); }
+      position: relative;
+      z-index: 2;
     }
   </style>
 </head>
@@ -112,9 +120,8 @@
     {% endif %}
   </header>
 
-  <!-- Ricardo ballant fixat als costats -->
-  <img src="{{ '/assetscss/ricardo.gif' | relative_url }}" alt="Ricardo esquerra" class="dancer left">
-  <img src="{{ '/assetscss/ricardo.gif' | relative_url }}" alt="Ricardo dreta" class="dancer right">
+  <!-- Ricardo ballant flotant per tota la pantalla -->
+  <img src="{{ '/assetscss/ricardo.gif' | relative_url }}" alt="Ricardo ballant" class="dancer">
 
   <div class="container">
     <div class="content">
