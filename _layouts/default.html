@@ -3,86 +3,97 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title | default: site.title }}</title>
+  <title>Pantalla d'Inici – Projecte Ubuntu</title>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
     body {
-      background: #111;
-      color: #fff;
+      background: #0e0e0e;
+      color: #eaeaea;
       font-family: 'Press Start 2P', cursive;
       margin: 0;
       padding: 0;
+      line-height: 1.6;
     }
 
     header {
       text-align: center;
-      padding: 30px 10px;
-      position: relative;
-      z-index: 2;
+      padding: 60px 20px 30px;
     }
 
-    h1 {
-      font-size: 22px;
-      margin-bottom: 10px;
+    header h1 {
+      font-size: 26px;
+      margin-bottom: 15px;
     }
 
-    p.subtitle {
+    header p.subtitle {
       font-size: 12px;
-      color: #aaa;
+      color: #999;
     }
 
     .container {
       max-width: 900px;
-      margin: 20px auto;
+      margin: 0 auto;
       padding: 20px;
-      text-align: left;
-      position: relative;
-      z-index: 2;
     }
 
-    .content {
-      background: rgba(0,0,0,0.7);
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 50px 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    nav ul li {
+      background: #1c1c1c;
+      padding: 25px;
       border-radius: 12px;
-      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+      transition: transform 0.2s, background 0.3s;
     }
 
-    
+    nav ul li:hover {
+      transform: translateY(-5px);
+      background: #292929;
+    }
+
+    nav ul li a {
+      color: #eaeaea;
+      text-decoration: none;
+      font-size: 12px;
+      display: block;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 10px;
+      color: #666;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>{{ page.title | default: site.title }}</h1>
-    {% if page.subtitle %}
-      <p class="subtitle">{{ page.subtitle }}</p>
-    {% endif %}
+    <h1>Projecte 1</h1>
+    <p class="subtitle">Implantació i Gestió d'un sistema Ubuntu Linux</p>
   </header>
 
- 
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a href="sp1.html">SP1. Instal·lació i Configuració Inicial</a></li>
+        <li><a href="sp2.html">SP2. Programari de Base i Gestió de Fitxers</a></li>
+        <li><a href="sp3.html">SP3. Administració de Dominis i Seguretat</a></li>
+        <li><a href="sp4.html">SP4. Sistemes d’Emmagatzematge en Ubuntu</a></li>
+        <li><a href="sp5.html">SP5. Monitoratge i Auditories</a></li>
+      </ul>
+    </nav>
+  </div>
+
   <footer>
     <p>Contingut sota llicència Creative Commons BY-NC-SA 4.0</p>
   </footer>
-
-  <script>
-    // Control música
-    const music = document.getElementById('bg-music');
-    const btn = document.querySelector('.music-control');
-    function toggleMusic() {
-      if (music.paused) {
-        music.play();
-        btn.textContent = "⏸ Pausa Música";
-      } else {
-        music.pause();
-        btn.textContent = "▶️ Reprodueix Música";
-      }
-    }
-
-    // Reajustar quan es canvia la mida de la finestra
-    window.addEventListener("resize", () => {
-      dancers.forEach((d, i) => {
-        positions[i].x = Math.min(positions[i].x, window.innerWidth - d.offsetWidth);
-        positions[i].y = Math.min(positions[i].y, window.innerHeight - d.offsetHeight);
-      });
-    });
-  </script>
 </body>
 </html>
