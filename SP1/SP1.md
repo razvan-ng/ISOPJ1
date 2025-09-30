@@ -96,6 +96,11 @@ Una vegada estiguem a l'escriptori, Windows s'haurà instal·lat. Ara haurem de 
 
 <img width="1031" height="859" alt="image" src="https://github.com/user-attachments/assets/5b42f818-5eb7-43a2-b03d-a95db2989e7e" />
 
+Amb F2 mentres la màquina estigui arrancant entrarem a la BIOS de la màquina virtual. A l'apartat Boot Manager triem Ubuntu per entrar al Linux.
+
+<img width="645" height="565" alt="image" src="https://github.com/user-attachments/assets/85fe854e-9b63-41c8-9b32-1fa84436b2ef" />
+
+
 
 
 
