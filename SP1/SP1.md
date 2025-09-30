@@ -88,6 +88,16 @@ Esperem a que es completi l'instal·lació.
 
 <img width="1031" height="859" alt="image" src="https://github.com/user-attachments/assets/674020d7-0864-4d12-a7ae-a4aaabecda28" />
 
+Configurem el sistema segons les nostres preferències a les pantalles següents.
+
+<img width="1031" height="859" alt="image" src="https://github.com/user-attachments/assets/6b9d8b7b-fc63-494b-ba4a-55bc77274147" />
+
+Una vegada estiguem a l'escriptori, Windows s'haurà instal·lat. Ara haurem de tornar a instal·lar el GRUB ja que l'instal·lador de Windows elimina el gestor d'arrencada i no podrem iniciar Ubuntu.
+
+<img width="1031" height="859" alt="image" src="https://github.com/user-attachments/assets/5b42f818-5eb7-43a2-b03d-a95db2989e7e" />
+
+
+
 
 
 ## Punts de restauració.
