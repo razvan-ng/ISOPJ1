@@ -1,54 +1,95 @@
-/* Suaviza las líneas horizontales */
-hr {
-  border: none;
-  border-top: 1px solid #ccc;
-  margin: 20px 0;
+/* ===== Estils generals ===== */
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+  color: #222;
+  line-height: 1.6;
 }
 
-/* Títulos */
-h1, h2, h3 {
-  margin-top: 20px;
-  margin-bottom: 10px;
-  color: #2c3e50;
+/* Capçalera i menú */
+header {
+  background: #333;
+  color: white;
+  padding: 1rem;
 }
-
-/* Enlaces */
-a {
-  color: #1a73e8;
+header h1 {
+  margin: 0;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+}
+nav a {
+  color: white;
   text-decoration: none;
-  margin-bottom: 5px;
-  display: inline-block;
-  font-size: 1.05em;
+  font-weight: 500;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Contingut principal */
+main {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Peus de pàgina */
+footer {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  background: #f1f1f1;
+  font-size: 0.9rem;
+}
+
+/* Enllaços generals */
+a {
+  color: #0066cc;
+  text-decoration: none;
 }
 a:hover {
   text-decoration: underline;
 }
 
-/* Pie de página */
-footer, .license {
-  font-size: 0.85em;
-  color: #666;
-  margin-top: 20px;
-  border-top: 1px solid #eee;
-  padding-top: 10px;
-  text-align: left;
+/* Codi i blocs */
+code {
+  background: #eee;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
 }
 
-/* Contenido */
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.3;
-  padding: 0 15px;
+/* ===== Diferenciació per pàgina ===== */
+body.index {
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
 }
 
-li {
-  line-height: 1.2;
+body.sp1 {
+  background: linear-gradient(135deg, #d9f2e6, #ffffff);
 }
 
+body.sp2 {
+  background: linear-gradient(135deg, #fff2cc, #ffffff);
+}
 
-/* Responsividad básica */
-@media (max-width: 600px) {
-  body {
-    padding: 0 10px;
-  }
+body.sp3 {
+  background: linear-gradient(135deg, #ffe6e6, #ffffff);
+}
+
+body.sp4 {
+  background: linear-gradient(135deg, #e6e6ff, #ffffff);
+}
+
+body.sp5 {
+  background: linear-gradient(135deg, #e6f0ff, #ffffff);
 }
