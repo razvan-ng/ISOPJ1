@@ -72,6 +72,11 @@ El seu llicenciament garanteix les quatre llibertats fonamentals:
 Tot i que està protegit per **drets d’autor**, les llicències asseguren que qualsevol usuari pugui fer ús, estudiar, redistribuir i modificar el programari dins el marc legal.  
 
 ## Gestors d'arrencada per a instal·lacions DUALS.
+Iniciem la màquina virtual amb la ISO de Windows a l'unitat virtual.
+
+<img width="1031" height="859" alt="image" src="https://github.com/user-attachments/assets/27caee92-53f0-4878-8733-ab8623f0904e" />
+
+
 ## Punts de restauració.
 ## Configuració de la xarxa.
 ## Comandes generals i instal·lacions.
