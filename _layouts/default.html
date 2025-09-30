@@ -2,98 +2,33 @@
 <html lang="ca">
 <head>
   <meta charset="UTF-8">
+  <title>{{ page.title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pantalla d'Inici – Projecte Ubuntu</title>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-  <style>
-    body {
-      background: #0e0e0e;
-      color: #eaeaea;
-      font-family: 'Press Start 2P', cursive;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-    }
 
-    header {
-      text-align: center;
-      padding: 60px 20px 30px;
-    }
-
-    header h1 {
-      font-size: 26px;
-      margin-bottom: 15px;
-    }
-
-    header p.subtitle {
-      font-size: 12px;
-      color: #999;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 50px 0;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    nav ul li {
-      background: #1c1c1c;
-      padding: 25px;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-      transition: transform 0.2s, background 0.3s;
-    }
-
-    nav ul li:hover {
-      transform: translateY(-5px);
-      background: #292929;
-    }
-
-    nav ul li a {
-      color: #eaeaea;
-      text-decoration: none;
-      font-size: 12px;
-      display: block;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      font-size: 10px;
-      color: #666;
-    }
-  </style>
+  <!-- CSS general -->
+  <link rel="stylesheet" href="{{ '/assetscss/custom.css' | relative_url }}">
 </head>
-<body>
+<body class="{{ page.title | slugify }}">
   <header>
-    <h1>Projecte 1</h1>
-    <p class="subtitle">Implantació i Gestió d'un sistema Ubuntu Linux</p>
-  </header>
-
-  <div class="container">
+    <h1>{{ site.title }}</h1>
     <nav>
       <ul>
-        <li><a href="sp1.html">SP1. Instal·lació i Configuració Inicial</a></li>
-        <li><a href="sp2.html">SP2. Programari de Base i Gestió de Fitxers</a></li>
-        <li><a href="sp3.html">SP3. Administració de Dominis i Seguretat</a></li>
-        <li><a href="sp4.html">SP4. Sistemes d’Emmagatzematge en Ubuntu</a></li>
-        <li><a href="sp5.html">SP5. Monitoratge i Auditories</a></li>
+        <li><a href="{{ '/' | relative_url }}">Inici</a></li>
+        <li><a href="{{ '/SP1/' | relative_url }}">Sprint 1</a></li>
+        <li><a href="{{ '/SP2/' | relative_url }}">Sprint 2</a></li>
+        <li><a href="{{ '/SP3/' | relative_url }}">Sprint 3</a></li>
+        <li><a href="{{ '/SP4/' | relative_url }}">Sprint 4</a></li>
+        <li><a href="{{ '/SP5/' | relative_url }}">Sprint 5</a></li>
       </ul>
     </nav>
-  </div>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
 
   <footer>
-    <p>Contingut sota llicència Creative Commons BY-NC-SA 4.0</p>
+    <p>&copy; {{ site.time | date: "%Y" }} - Projecte ISOPJ1</p>
   </footer>
 </body>
 </html>
