@@ -76,6 +76,19 @@ Iniciem la màquina virtual amb la ISO de Windows a l'unitat virtual.
 
 <img width="1031" height="859" alt="image" src="https://github.com/user-attachments/assets/27caee92-53f0-4878-8733-ab8623f0904e" />
 
+Acceptem les condicions. Ens deixara triar entre dues opcions; triem la personalitzada per poder fer el dual boot.
+
+<img width="1031" height="859" alt="image" src="https://github.com/user-attachments/assets/70f0f2c2-45cf-4211-b321-d3306425d97a" />
+
+Seleccionem l'espai sense assignar i premem sobre "Siguiente".
+
+<img width="1031" height="859" alt="image" src="https://github.com/user-attachments/assets/7e790ffe-bdf5-4444-b389-4babc917ac89" />
+
+Esperem a que es completi l'instal·lació.
+
+<img width="1031" height="859" alt="image" src="https://github.com/user-attachments/assets/674020d7-0864-4d12-a7ae-a4aaabecda28" />
+
+
 
 ## Punts de restauració.
 ## Configuració de la xarxa.
