@@ -100,6 +100,11 @@ Amb F2 mentres la màquina estigui arrancant entrarem a la BIOS de la màquina v
 
 <img width="645" height="565" alt="image" src="https://github.com/user-attachments/assets/85fe854e-9b63-41c8-9b32-1fa84436b2ef" />
 
+Amb la comanda sudo fdisk -l, hem de buscar el nostre disc dur, en aquest cas es el /dev/sda
+
+<img width="836" height="587" alt="image" src="https://github.com/user-attachments/assets/4ea0f325-5e6f-42b5-995b-ebee96f8d29b" />
+
+
 
 
 
