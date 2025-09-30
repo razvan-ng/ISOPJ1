@@ -46,75 +46,7 @@
       padding: 20px;
     }
 
-    /* Botó música */
-    .music-control {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #ff0066;
-      color: #fff;
-      font-family: 'Press Start 2P', cursive;
-      font-size: 12px;
-      padding: 12px 18px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      z-index: 3;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.4);
-      transition: transform 0.2s;
-    }
-
-    .music-control:hover {
-      transform: scale(1.1);
-      background: #ff3385;
-    }
-
-    /* Ricardos */
-    .dancer {
-      position: absolute;
-      width: 160px;
-      height: auto;
-      image-rendering: pixelated;
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 30px 0;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-    }
-
-    nav ul li {
-      background: #222;
-      padding: 15px;
-      border-radius: 12px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.5);
-      transition: transform 0.2s;
-    }
-
-    nav ul li:hover {
-      transform: scale(1.05);
-      background: #333;
-    }
-
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 12px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 10px;
-      color: #888;
-      position: relative;
-      z-index: 2;
-    }
+    
   </style>
 </head>
 <body>
@@ -125,28 +57,7 @@
     {% endif %}
   </header>
 
-  <!-- 5 Ricardos escampats -->
-  <img src="{{ '/assetscss/ricardo.gif' | relative_url }}" alt="Ricardo 1" class="dancer" id="ric1">
-  <img src="{{ '/assetscss/ricardo.gif' | relative_url }}" alt="Ricardo 2" class="dancer" id="ric2">
-  <img src="{{ '/assetscss/ricardo.gif' | relative_url }}" alt="Ricardo 3" class="dancer" id="ric3">
-  <img src="{{ '/assetscss/ricardo.gif' | relative_url }}" alt="Ricardo 4" class="dancer" id="ric4">
-  <img src="{{ '/assetscss/ricardo.gif' | relative_url }}" alt="Ricardo 5" class="dancer" id="ric5">
-
-  <!-- Música de fons -->
-  <audio id="bg-music" autoplay loop>
-    <source src="{{ '/assetscss/music.mp3' | relative_url }}" type="audio/mpeg">
-    El teu navegador no suporta àudio.
-  </audio>
-
-  <!-- Botó per controlar la música -->
-  <button class="music-control" onclick="toggleMusic()">⏯ Música</button>
-
-  <div class="container">
-    <div class="content">
-      {{ content }}
-    </div>
-  </div>
-
+ 
   <footer>
     <p>Contingut sota llicència Creative Commons BY-NC-SA 4.0</p>
   </footer>
@@ -164,55 +75,6 @@
         btn.textContent = "▶️ Reprodueix Música";
       }
     }
-
-    // Moviment dels Ricardos
-    const dancers = [
-      document.getElementById("ric1"),
-      document.getElementById("ric2"),
-      document.getElementById("ric3"),
-      document.getElementById("ric4"),
-      document.getElementById("ric5")
-    ];
-
-    const speeds = [];
-    const positions = [];
-
-    // Inicialitzar posicions i velocitats
-    dancers.forEach((d, i) => {
-      positions[i] = {
-        x: Math.random() * window.innerWidth * 0.8,
-        y: Math.random() * window.innerHeight * 0.8
-      };
-      speeds[i] = {
-        vx: (Math.random() * 2 + 1) * (Math.random() < 0.5 ? 1 : -1),
-        vy: (Math.random() * 2 + 1) * (Math.random() < 0.5 ? 1 : -1)
-      };
-    });
-
-    function animate() {
-      dancers.forEach((d, i) => {
-        const w = d.offsetWidth;
-        const h = d.offsetHeight;
-
-        positions[i].x += speeds[i].vx;
-        positions[i].y += speeds[i].vy;
-
-        // Rebot a les vores
-        if (positions[i].x <= 0 || positions[i].x + w >= window.innerWidth) {
-          speeds[i].vx *= -1;
-        }
-        if (positions[i].y <= 0 || positions[i].y + h >= window.innerHeight) {
-          speeds[i].vy *= -1;
-        }
-
-        d.style.left = positions[i].x + "px";
-        d.style.top = positions[i].y + "px";
-      });
-
-      requestAnimationFrame(animate);
-    }
-
-    animate();
 
     // Reajustar quan es canvia la mida de la finestra
     window.addEventListener("resize", () => {
