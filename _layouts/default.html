@@ -8,7 +8,7 @@
   <!-- CSS general -->
   <link rel="stylesheet" href="{{ '/assetscss/custom.css' | relative_url }}">
 </head>
-<body class="{{ page.title | slugify }}">
+<body class="{{ page.layout | default: 'default' }} {{ page.slug | default: page.path | slugify }}">
   <header>
     <h1>{{ site.title }}</h1>
     <nav>
