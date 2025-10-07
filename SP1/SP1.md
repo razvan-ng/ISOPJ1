@@ -133,5 +133,47 @@ Un cop s'hagi reiniciat ens surtirà el GRUB.
 <img width="1052" height="880" alt="image" src="https://github.com/user-attachments/assets/8f533da8-7dd9-4b15-b8a0-1d5b3c54857e" />
 
 ## Punts de restauració.
+Per fer punts de restauració a l'Ubuntu utilitzarem el Timeshift. L'instal·lem amb sudo apt-get install timeshift
+
+<img width="788" height="503" alt="image" src="https://github.com/user-attachments/assets/a2431a41-cad2-421e-b9f3-33a02d332f7a" />
+
+Fem servir el fdisk per visualitzar les particions i els discs disponibles al sistema. (fdisk -l
+
+<img width="866" height="629" alt="image" src="https://github.com/user-attachments/assets/8efa21f1-720d-4e79-84e5-c24b229c9fc7" />
+
+Busquem el disc addicional que hem instal·lat i el sel·lecionem. En aquest cas es el /dev/sdb. (fdisk /dev/sdb)
+
+<img width="788" height="187" alt="image" src="https://github.com/user-attachments/assets/024d9d3f-2462-47f1-95a7-35f56dcde6f7" />
+
+Amb la comanda "n" fem una partició, anem apretant enter fins que ens digui que la partició s'ha creat (volem els valors predeterminats).
+
+<img width="788" height="440" alt="image" src="https://github.com/user-attachments/assets/2d401971-e25d-49e0-829a-b88f97ae3fdf" />
+
+Consultem amb fdisk -l que la partició s'hagi creat satisfactòriament.
+
+<img width="788" height="440" alt="image" src="https://github.com/user-attachments/assets/d0b98122-9063-462e-8aad-8fe3d6363364" />
+
+Li donem format ext4 a la partició creada amb la comanda mkfs.ext4 /dev/sdb1
+
+<img width="788" height="440" alt="image" src="https://github.com/user-attachments/assets/bac5bc08-b8e0-4923-88d8-71c82ff73482" />
+
+Un cop feta la partició creem arxius aleatoris per provar que el programari funciona. A la nostra carpeta d'usuari creem un arxiu hola (touch hola) i una carpeta adeu (mkdir adeu) amb superusuari. Comprovem amb ls que s'han creat.
+
+<img width="788" height="440" alt="image" src="https://github.com/user-attachments/assets/407454db-820d-480a-8ced-974c93cdbaaa" />
+
+Havent creat els arxius, iniciem el Timeshift i sel·lecionem el típus de punt de restauració que volem.
+
+<img width="788" height="440" alt="image" src="https://github.com/user-attachments/assets/663c62ea-bedc-4a56-93c1-2e1bd67ec1dc" />
+
+Triem la ubicació on volem que els snapshots es guardin, en aquest cas en el disc que acabem de particionar.
+
+<img width="788" height="440" alt="image" src="https://github.com/user-attachments/assets/20bf6a6c-323f-4aed-9409-54fc6257889c" />
+
+
+
+
+
+
+
 ## Configuració de la xarxa.
 ## Comandes generals i instal·lacions.
