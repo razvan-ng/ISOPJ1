@@ -100,7 +100,7 @@ Amb F2 mentres la màquina estigui arrancant entrarem a la BIOS de la màquina v
 
 <img width="645" height="565" alt="image" src="https://github.com/user-attachments/assets/85fe854e-9b63-41c8-9b32-1fa84436b2ef" />
 
-Entrem al nostre navegador al [seguent link](https://help.ubuntu.com/community/Boot-Repair) per descarregar el Boot Repair, un programa què ens facilitarà la feina de restaurar el GRUB.
+Entrem al nostre navegador al [següent link](https://help.ubuntu.com/community/Boot-Repair) per descarregar el Boot Repair, un programa què ens facilitarà la feina de restaurar el GRUB.
 
 Obrim una terminal i inserim aquestes comandes per instal·lar Boot-Repair.
 
