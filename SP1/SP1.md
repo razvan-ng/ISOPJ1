@@ -100,15 +100,37 @@ Amb F2 mentres la màquina estigui arrancant entrarem a la BIOS de la màquina v
 
 <img width="645" height="565" alt="image" src="https://github.com/user-attachments/assets/85fe854e-9b63-41c8-9b32-1fa84436b2ef" />
 
-Amb la comanda sudo fdisk -l, hem de buscar el nostre disc dur, en aquest cas es el /dev/sda
+Entrem al nostre navegador al [seguent link](https://help.ubuntu.com/community/Boot-Repair) per descarregar el Boot Repair, un programa què ens facilitarà la feina de restaurar el GRUB.
 
-<img width="836" height="587" alt="image" src="https://github.com/user-attachments/assets/4ea0f325-5e6f-42b5-995b-ebee96f8d29b" />
+Obrim una terminal i inserim aquestes comandes per instal·lar Boot-Repair.
 
+<img width="889" height="191" alt="image" src="https://github.com/user-attachments/assets/63f85793-2892-4046-a730-c76a1d4b53af" />
 
+<img width="756" height="250" alt="image" src="https://github.com/user-attachments/assets/607bf37f-1a05-4989-bfac-d93e585c83c2" />
 
+Una vegada executada l'última comanda s'iniciarà el programa automaticament. Primer farà un escaneig dels discs.
 
+<img width="756" height="214" alt="image" src="https://github.com/user-attachments/assets/461e58aa-5808-4339-bac6-032fd2389bdb" />
 
+Un cop hagi acabat ens donarà dos opcions, triarem la recomanada.
 
+<img width="476" height="339" alt="image" src="https://github.com/user-attachments/assets/4959eb70-5cf3-42bc-883f-70d46efc74fa" />
+
+Esperem a que ens reinstali GRUB automàticament i ens arregli l'arrencada.
+
+<img width="476" height="161" alt="image" src="https://github.com/user-attachments/assets/b87c6721-e81b-4bd2-a0f2-37daa43cfe0b" />
+
+Un cop acabi ens preguntarà si volem que pugi un informe a pastebin, li diem que no (si ho voleu apreteu si).
+
+<img width="476" height="161" alt="image" src="https://github.com/user-attachments/assets/fd4e295d-d946-4efc-8051-26d7f106c1d7" />
+
+Al cap d'un moment ens surtirà una pantalla conforme el boot s'ha restaurat satisfactòriament, reiniciem i ja ens bootejarà amb el GRUB.
+
+<img width="1047" height="400" alt="image" src="https://github.com/user-attachments/assets/dc62a676-8e81-41de-b133-6cb0b81f47d6" />
+
+Un cop s'hagi reiniciat ens surtirà el GRUB.
+
+<img width="1052" height="880" alt="image" src="https://github.com/user-attachments/assets/8f533da8-7dd9-4b15-b8a0-1d5b3c54857e" />
 
 ## Punts de restauració.
 ## Configuració de la xarxa.
