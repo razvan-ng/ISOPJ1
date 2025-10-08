@@ -169,11 +169,67 @@ Triem la ubicació on volem que els snapshots es guardin, en aquest cas en el di
 
 <img width="788" height="440" alt="image" src="https://github.com/user-attachments/assets/20bf6a6c-323f-4aed-9409-54fc6257889c" />
 
+A continuació eligim la periodicitat en la qual volem que es facin els snapshots. Triem que ho faci amb cada arrencada de l'equip (tarda 10 minuts des de que arranquem el equim fins que la fa).
 
+<img width="788" height="440" alt="image" src="https://github.com/user-attachments/assets/a52b10c4-8e30-4847-baf3-89f928002fd5" />
 
+També haurem de dirli que exclogui el root però que inclogui la carpeta home de l'usuari.
 
+<img width="797" height="613" alt="image" src="https://github.com/user-attachments/assets/df37f126-7190-4229-bf21-f234dc1bf280" />
 
+Un cop configurat el programa ens apareixerà la pantalla d'inici buida ja que no hem fet cap snapshot encara. El podem fer nosaltres manualment per comprovar que el programa funcioni.
 
+<img width="839" height="684" alt="image" src="https://github.com/user-attachments/assets/9dc072b0-fe3d-44e9-b749-3413caffaa45" />
+
+<img width="880" height="704" alt="image" src="https://github.com/user-attachments/assets/05c7158c-904f-4167-9977-a5a78b73003b" />
+
+Un cop acabat ens apareixerà la instantània que acabem de crear. 
+
+<img width="880" height="704" alt="image" src="https://github.com/user-attachments/assets/0c169ae3-dbde-4deb-b14c-b689ee2ca03e" />
+
+Eliminem els arxius que hem creat anteriorment per comprovar que ens restauraría els fitxers en un cas real.
+
+<img width="880" height="254" alt="image" src="https://github.com/user-attachments/assets/02110fd1-5c21-4ee9-825a-09244f0c4b23" />
+
+Estant al Timeshift, tenint sel·lecionat el snapshot que volem restaurar, apretem sobre "Restore" i ens apareixerà els arxius que ens restablirà, crearà o borrarà per tal que el sistema estigui igual.
+
+<img width="593" height="488" alt="image" src="https://github.com/user-attachments/assets/7ec74f64-a24d-46d1-a276-4876df702bd3" />
+
+Esperem a què acabi la recuperació (ens pot reiniciar el equip) i ja ho tindrem llest. 
+
+<img width="1308" height="912" alt="image" src="https://github.com/user-attachments/assets/c49b4b0e-e5f4-48bd-b98d-e9e4708b1a07" />
 
 ## Configuració de la xarxa.
+
+Mitjançant la comanda "ip a" ens apareixeran llistats totes les NIC que tinguem instal·lades a l'ordinador, amb la nostra ip privada, MAC, etc. La meva IP privada és 192.168.203.152/24.
+
+<img width="756" height="333" alt="image" src="https://github.com/user-attachments/assets/1ff72831-e7b7-48d1-846f-39bd689cd148" />
+
+Per defecte (i el ideal en instal·lacions casolanes) els dispositius es configuren en el servei d'assignació IP DHCP, en el què el propi router assigna automàticament una adreça IP a un dispositiu en funció de les IPs disponibles. La principal característica és que un mateix dispositiu se li pot assignar IPs privades distintes si aquest no està configurat per tenir-ne una fixa i això pot suposar un problema en instal·lacions on hi hagin servidors. Podem configurar una IP privada mitjançant interfícia gràfica als ajustaments de l'Ubuntu. 
+
+<img width="756" height="523" alt="image" src="https://github.com/user-attachments/assets/b4fb0de4-2714-4392-ab9e-777b894fbc85" />
+
+Comprovem que haguem configurat correctament els paràmetres fent un ping a una pàgina web. 
+
+<img width="756" height="250" alt="image" src="https://github.com/user-attachments/assets/39052335-2263-48e3-a515-799e75ddfc80" />
+
+Podem també configurar aquests paràmetres mitjançant netplan. El busquem a la seva ubicació a /etc/netplan. Allà trobarem el .yaml.
+
+<img width="756" height="250" alt="image" src="https://github.com/user-attachments/assets/e1dee6a5-240f-43af-908e-cf97c0f02c74" />
+
+Configurarem els paràmetres d'IP fixa i DNS igual que ho vam fer amb l'interfície gràfica, indicant-li que no volem que faci servir DHCP, indicant-li una IP fixa i un servidor DNS. (sudo nano /etc/netplan/01-network-manager-all.yaml).
+
+<img width="756" height="534" alt="image" src="https://github.com/user-attachments/assets/712ea2ee-a4b9-4a7b-9926-5e25f965ecf0" />
+
+Guardem amb Ctrl + X i Enter. Apliquem els canvis amb sudo netplan apply i ho comprovem als ajustaments.
+
+<img width="756" height="291" alt="image" src="https://github.com/user-attachments/assets/01b40085-393e-42eb-9e6e-f8031bc6f46a" />
+
+<img width="756" height="291" alt="image" src="https://github.com/user-attachments/assets/dd216660-0b37-4b53-9a4e-fe3de58fa8f3" />
+
+Comprovem la connectivitat fent un ping a una pàgina web i que aquest tingui 0% de packet loss.
+
+<img width="756" height="291" alt="image" src="https://github.com/user-attachments/assets/d3edff33-ad3f-499f-806c-a4ce9a990802" />
+
+
 ## Comandes generals i instal·lacions.
