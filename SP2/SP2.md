@@ -13,8 +13,8 @@ Unitat mínima lògica on es guarden les dades a nivell de sistema operatiu. La 
 ### Fragmentació interna
 Ocurreix quan els blocks són massa grans per al que és vol guardar i es desaprofita espai al disc. Per exemple; si tenim un arxiu que ocupa 2000kb farà servir 2 blocks, malbaratant la meitat dels blocks/clústers. 
 
-Si vull guardar arxius petits el que m'interessa és modificar la mida del block per a no malbaratar espai.
-Si vull guardar arxius grans m'interessa ampliar la mida del clúster al màxim. Si no ho fem tindrem menys rendiment ja que l'arxiu està més fragmentat.
+Si volem guardar arxius petits el que interessa és modificar la mida del block per a no malbaratar espai.
+Si volem guardar arxius grans interessa ampliar la mida del clúster al màxim. Si no ho fem tindrem menys rendiment ja que l'arxiu està més fragmentat.
 
 ### Fragmentació externa
 Quan un arxiu no està guardat de manera consecutiva en la memòria i els seus accessos són més lents i baixa el rendiment. En Windows tenim l'eina de Desfragmentador de fitxers, en Linux no tenim cap eina similar ja que no és recomana fer-ho.
@@ -40,6 +40,8 @@ Una partició és un tros físic del disc dur. Amb el GParted podem gestionar pa
 Un volum és una capa d'abstracció que es col·loca a sobre de les particions i/o discs. 
 
 #### GPARTED
+
+
 #### Comandes
 
 ## GESTIÓ DE PROCESSOS
