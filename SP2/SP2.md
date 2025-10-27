@@ -35,6 +35,10 @@ No borra arxius i si troba sectors defectuosos els marca però no els arregla. E
 No esborra els arxius, només esborra el sistema de fitxers. Es poden recuperar les dades esborrades. Si es troben sectors defectuosos els ignora completament.
 
 ### Gestió de particions
+Una partició és un tros físic del disc dur. Amb el GParted podem gestionar particions però no podem modificar la mida del block.
+
+Un volum és una capa d'abstracció que es col·loca a sobre de les particions i/o discs. 
+
 #### GPARTED
 #### Comandes
 
