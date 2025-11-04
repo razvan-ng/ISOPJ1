@@ -62,6 +62,36 @@ Amb fdisk podem crear una partició (o varies) si un disc no està particionat. 
 
 <img width="777" height="525" alt="image" src="https://github.com/user-attachments/assets/6bd7602e-e7bc-413b-ae23-c88d8ad15ffb" />
 
+<img width="556" height="484" alt="image" src="https://github.com/user-attachments/assets/7041e457-8aba-4fb9-9780-40ca49e84e36" />
+
+<img width="814" height="354" alt="image" src="https://github.com/user-attachments/assets/8816df23-79df-472e-abf1-4df235fd0336" />
+
+Amb la "w" sortim i guardem.
+
+Creem la partició ext4 amb "mkfs ext4 -b 2048 /dev/sdb1".
+
+<img width="696" height="213" alt="image" src="https://github.com/user-attachments/assets/9a64650c-42fd-4266-af53-c9b858281074" />
+
+I la partició ntfs amb "mkfs ntfs /dev/sdb2/".
+
+<img width="535" height="38" alt="image" src="https://github.com/user-attachments/assets/50fff4e3-cd28-4cc9-a2d2-e26526e1b307" />
+
+Comprovem la mida de block de la partició ext4.
+
+<img width="636" height="91" alt="image" src="https://github.com/user-attachments/assets/d370799c-3b20-46b4-b18f-39b22aafe486" />
+
+Comprovem les particions al GParted.
+
+<img width="756" height="253" alt="image" src="https://github.com/user-attachments/assets/3d494eed-d1e3-4b6d-91e1-2da16707783b" />
+
+
+
+
+<img width="671" height="168" alt="image" src="https://github.com/user-attachments/assets/a4f3d598-7b86-499f-aeb0-ea484dffcdbd" />
+
+<img width="557" height="110" alt="image" src="https://github.com/user-attachments/assets/d3555320-f7d9-4ddf-b181-cbaeabd1ddce" />
+
+<img width="438" height="86" alt="image" src="https://github.com/user-attachments/assets/7941c80b-148b-4b79-8b66-455e89750975" />
 
 
 ## GESTIÓ DE PROCESSOS
