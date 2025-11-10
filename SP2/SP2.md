@@ -84,8 +84,7 @@ Comprovem les particions al GParted.
 
 <img width="756" height="253" alt="image" src="https://github.com/user-attachments/assets/3d494eed-d1e3-4b6d-91e1-2da16707783b" />
 
-
-
+Montarem una partició en el nostre sistema operatiu cada vegada que arranquessim l'equip.
 
 <img width="671" height="168" alt="image" src="https://github.com/user-attachments/assets/a4f3d598-7b86-499f-aeb0-ea484dffcdbd" />
 
@@ -93,10 +92,140 @@ Comprovem les particions al GParted.
 
 <img width="438" height="86" alt="image" src="https://github.com/user-attachments/assets/7941c80b-148b-4b79-8b66-455e89750975" />
 
+<img width="667" height="262" alt="image" src="https://github.com/user-attachments/assets/35386ce3-4b82-41f1-85f7-0c266ab40294" />
+
+Comprovem que les configuracions s'han aplicat correctament.
+
+<img width="522" height="185" alt="image" src="https://github.com/user-attachments/assets/598afae0-ae9d-4807-9e1e-c45a39311121" />
 
 ## GESTIÓ DE PROCESSOS
+
+
 ## GESTIÓ D'USUARIS, GRUPS I PERMISOS
+
+### Fitxers implicats
+
+És important gestionar els usuaris d'un sistema de manera correcta per establir permissos i restriccions de forma acertada.
+
+A Ubuntu tenim una alternativa amb GUI per fer aquesta tasca de forma més bàsica (gnome-system-tools).
+
+<img width="1004" height="664" alt="image" src="https://github.com/user-attachments/assets/1d10253b-58d2-46d4-8dac-9b29f51d6c53" />
+
+Els fitxers implicats en la gestió d'usuaris són 3; passwd, group i shadow.
+
+Podem accedir a cadascún amb nano, encara que no els haurem de modiifcar mai amb aquesta eina.
+
+sudo nano /etc/passwd
+
+<img width="706" height="740" alt="image" src="https://github.com/user-attachments/assets/6e4f8a4c-6905-4642-9bc2-e03de690e752" />
+
+Aquest fitxer conté tots els usuaris del sistema. Defineix l’usuari razvan (UID i GID 1000), amb directori /home/razvan i shell /bin/bash. La contrasenya està amagada a /etc/shadow (el camp “x”).
+
+sudo nano /etc/group
+
+Conté tots els grups del sistema. Cada vegada que es crea un usuari, és crea un grup automàticament. Per exemple, podem comprovar qui es l'administrador del sistema (adm).
+
+<img width="706" height="740" alt="image" src="https://github.com/user-attachments/assets/a5b16367-462e-4342-a20d-1d20b59cf1d6" />
+
+sudo nano /etc/shadow
+
+Trobem per a cada usuari, el password (encriptat) que té. Al final de la línia trobem la caducitat de la contrasenya (és a dir, podem establir quan s'ha de canviar), saber fa quan no es canvïa i si s'ha de canviar, etc.
+
+<img width="706" height="740" alt="image" src="https://github.com/user-attachments/assets/2e7a450a-ef39-41ab-9584-82fff22754cf" />
+
+sudo nano /etc/gshadow
+
+Passwords de grup. Hi ha una diferència respecte al group ja que veiem tots els usuaris que formen un grup, sent l'únic lloc on veurem qui es l'administrador d'un grup concret. Només es pot posar un administrador.
+
+<img width="706" height="740" alt="image" src="https://github.com/user-attachments/assets/72795737-c7dc-4dd3-bef9-b04a73917b19" />
+
+### Comandes bàsiques
+
+adduser xyz, on xyz és el nom d'usuari que tindrà el compte que volem crear.
+
+<img width="562" height="349" alt="image" src="https://github.com/user-attachments/assets/c34d1f22-f191-4226-84e1-733aefae1939" />
+
+Aquest usuari no tindrà carpeta home fins que no iniciï sessió. Si ho fa llavors es crearan automàticament.
+
+<img width="637" height="447" alt="image" src="https://github.com/user-attachments/assets/b71f2e41-95ef-4f70-9adc-4f7466b3f915" />
+
+Amb useradd xyz, on xyz és el nom d'usuari que tindrà el compte que volem crear, crearem un usuari amb menys privilegis.
+
+<img width="496" height="113" alt="image" src="https://github.com/user-attachments/assets/2aa7dad7-e2cc-41de-8dd5-a36c0392d47e" />
+
+Degut a això la terminal que tindrà l'usuari serà sh. Podem canviar-ho al bash (tot i que l'usuari funcionaria sense fer això).
+
+<img width="599" height="61" alt="image" src="https://github.com/user-attachments/assets/d729e8c1-e2a4-4c0a-beef-1ec8b012dcad" />
+
+Creem la carpeta home del usuari (useradd no crea la carpeta).
+
+<img width="640" height="135" alt="image" src="https://github.com/user-attachments/assets/f97dd16d-9a7b-4c3b-bb99-533cc286fd42" />
+
+Haurem d'assignar la propietat de la carpeta a l'usuari creat.
+
+<img width="656" height="147" alt="image" src="https://github.com/user-attachments/assets/646688d8-2d45-4f69-bfc5-68b5fea605cd" />
+
+Afegim usuaris al grup users. Els borrem. Afegim usuaris al grup sudo.
+
+<img width="893" height="753" alt="image" src="https://github.com/user-attachments/assets/82d5ee29-a7c2-4260-941e-b6950d47041a" />
+
+Podem borrar usuaris sense borrar la seva carpeta home amb deluser xyz, on xyz és el nom d'usuari a borrar.
+
+<img width="457" height="98" alt="image" src="https://github.com/user-attachments/assets/09d95bc5-b5d0-4c07-be30-ebfd9bb49791" />
+
+Per borrar usuaris borrant la seva carpeta home ho farem amb userdel -r xyz, on xyz és el nom d'usuari a borrar.
+
+<img width="611" height="74" alt="image" src="https://github.com/user-attachments/assets/f66ab04f-bed5-4132-9836-3abe94c1d96b" />
+
+Per bloquejar usuaris ho farem amb usermod -L xyz, on xyz és el nom d'usuari a bloquejar.
+
+<img width="901" height="114" alt="image" src="https://github.com/user-attachments/assets/92233318-a8d5-4743-ad2e-9c820b20ff09" />
+
+Per desbloquejar-ho ho fem amb usermod -U xyz.
+
+<img width="479" height="41" alt="image" src="https://github.com/user-attachments/assets/425b756b-21c6-4969-ab67-11c90bebff94" />
+
+Per canviar el nom a un grup ho fem amb groupmod -n (nom_nou) (nom_vell). Eliminem el grup amb groupdel xyz.
+
+<img width="509" height="184" alt="image" src="https://github.com/user-attachments/assets/9d37a023-cba6-4470-85a6-53f9c3065ef3" />
+
+Per afegir usuaris a un grup ho podem fer de tres maneres diferents.
+
+Amb adduser (nom_usuari) (nom_grup)
+
+<img width="496" height="107" alt="image" src="https://github.com/user-attachments/assets/90043f8d-31ae-4d20-91e0-8cea7790352a" />
+
+Amb gpasswd -a (nom_usuari) (nom_grup)
+
+<img width="505" height="41" alt="image" src="https://github.com/user-attachments/assets/696b3703-fc87-44f0-b9fa-e2a9d7be6829" />
+
+Amb usermod -a -G (nom_grup) (nom_usuari)
+
+<img width="520" height="19" alt="image" src="https://github.com/user-attachments/assets/c35d53c8-3d2e-416a-9b5a-83f648c43cf1" />
+
+Comprovem que els usuaris s'hagin afegit correctament.
+
+<img width="532" height="56" alt="image" src="https://github.com/user-attachments/assets/46f8f1e2-8824-42ff-b425-29cfa6360eb3" />
+
+Per denominar administrador a un usuari ho fem mitjançant gpasswd -A (usuari) (grup)
+
+<img width="554" height="181" alt="image" src="https://github.com/user-attachments/assets/ee5784cd-5f6b-498b-a81c-2d9ae7ccd203" />
+
+Un cop fet això no podrem eliminar l'admin del grup. Per això haurem d'eliminar el grup.
+
+<img width="592" height="65" alt="image" src="https://github.com/user-attachments/assets/40111a63-bebb-4062-8485-4eecee6bf78e" />
+
+Havent eliminat el grup els usuaris continuaran existint.
+
+<img width="594" height="81" alt="image" src="https://github.com/user-attachments/assets/b3c7da46-440a-49c7-a31c-d5966ee2b25f" />
+
+Comprovem els grups i els usuaris.
+
+<img width="582" height="161" alt="image" src="https://github.com/user-attachments/assets/5ac3f933-2ac9-4c55-b244-ee876d0fe0f4" />
+
 ## CÒPIES DE SEGURETAT I AUTOMATIZACIÓ DE TASQUES
+
+
 ## QUOTES D'USUARI
 
 
