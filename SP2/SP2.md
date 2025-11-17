@@ -223,6 +223,101 @@ Comprovem els grups i els usuaris.
 
 <img width="582" height="161" alt="image" src="https://github.com/user-attachments/assets/5ac3f933-2ac9-4c55-b244-ee876d0fe0f4" />
 
+
+### Personalització comandes adduser i useradd
+
+Creem 4 usuaris aleatoris. Comprovem que s’hagin creat.
+
+<img width="602" height="110" alt="image" src="https://github.com/user-attachments/assets/a58ab7d9-c6b2-42cd-845f-126d32395bc1" />
+
+Creem el grup. Com ens hem equivocat de nom el canviem.
+
+<img width="602" height="97" alt="image" src="https://github.com/user-attachments/assets/0bebd895-11d5-4f99-b993-590773e39d3a" />
+
+Afegim els usuaris als grups de les diferents maneres que hem vist. Comprovem que s’hagin afegit. Despres els tornem a eliminar.
+
+<img width="633" height="165" alt="image" src="https://github.com/user-attachments/assets/8671f247-8983-4fa2-b63d-f311a71754ee" />
+<img width="633" height="165" alt="image" src="https://github.com/user-attachments/assets/282f3c65-804b-45fc-800f-6686d526ece9" />
+
+Amb usermod -g (nom_grup) (nom_usuari) modifiquem el grup principal de l’usuari. Un usuari només té un grup principal, però pot formar part de molts de grups.
+
+<img width="633" height="165" alt="image" src="https://github.com/user-attachments/assets/f2e530c5-da8f-464f-9558-9576f6c3cbf6" />
+
+Si intentem esborrar un grup principal d’un usuari no el podrem esborrar.
+
+<img width="633" height="70" alt="image" src="https://github.com/user-attachments/assets/9f5679bf-d3be-4591-8a64-05eef02b0d0f" />
+
+**On intervenen el les comandes d'usuaris?**
+
+_A adduser;_
+
+/etc/skel
+/etc/adduser.conf
+/etc/login.defs
+
+_A useradd;_
+
+/etc/login.defs
+/etc/default/useradd
+
+A /etc/skel/ tot el que posem en aquest directori es copiarà a la carpeta home del usuari creat amb adduser.
+
+<img width="540" height="373" alt="image" src="https://github.com/user-attachments/assets/e993c7a1-78e7-42eb-bb16-e34fc9a6094b" />
+
+Podem establir (a /etc/adduser.conf) que, per cada usuari creat, la seva home no estigui a /home sinó que estigui a /var (per exemple).
+
+<img width="647" height="246" alt="image" src="https://github.com/user-attachments/assets/e31c607f-0850-4d5f-b211-52849b0cf659" />
+
+Podem canviar (a /etc/adduser.conf) també el ID del grups i el dels usuaris nous que es crearan.
+
+<img width="692" height="173" alt="image" src="https://github.com/user-attachments/assets/a226ef70-4796-49fa-b76f-c8e4f333d4c9" />
+
+A /etc/login.defs podem, per exemple, configurar la caducitat de les contrasenyes.
+
+<img width="730" height="189" alt="image" src="https://github.com/user-attachments/assets/80dc55d6-2d6b-40b4-b45f-de318ae225d1" />
+
+Comprovem que els canvis que hem fen s'han aplicat correctament. Provem a crear un uusari nou amb adduser.
+
+Carpeta home a /var.
+
+<img width="730" height="189" alt="image" src="https://github.com/user-attachments/assets/ddaadc22-9fc1-4135-848b-bf1d025b1730" />
+
+User i grup ID.
+
+<img width="731" height="65" alt="image" src="https://github.com/user-attachments/assets/4404afef-c542-4779-bd0a-4cb916fc91b6" />
+
+Caducitat de contrasenya.
+
+<img width="731" height="65" alt="image" src="https://github.com/user-attachments/assets/88cacc15-d04b-4aee-bbc2-98ac18a443b1" />
+
+Comprovem que s'han creat els arxius que hem configurat a /etc/skel a la carpeta home del usuari.
+
+<img width="731" height="189" alt="image" src="https://github.com/user-attachments/assets/cffe4f12-c05f-44bd-b8c5-f90cbf3e8a79" />
+
+A /etc/default/useradd canviem el terminal de SH a BASH.
+
+<img width="731" height="189" alt="image" src="https://github.com/user-attachments/assets/022df3ae-8758-4b9e-a0ea-acde66e7379e" />
+
+Comprovem que s'hagi canviat el terminal.
+
+<img width="731" height="189" alt="image" src="https://github.com/user-attachments/assets/58d94830-a08d-4903-94e1-03890475ecf9" />
+
+Configurem l'ubicació predeterminada del terminal quan l'usuari inicie sessió a /etc/skel/.profile
+
+<img width="731" height="527" alt="image" src="https://github.com/user-attachments/assets/6737b6a0-89f7-4aae-bba0-89c7dae2d8e4" />
+
+A /etc/skel/.bashrc podem configurar un aliar per executar una comanda només amb un shortcut.
+
+<img width="732" height="228" alt="image" src="https://github.com/user-attachments/assets/4713a8cf-eb5e-4fcc-bbc3-9c1019186802" />
+
+A /etc/skel/.bash_logout podem configurar que, cada vegada que l'usuari faci logout s'elimini (per exemple) la carpeta d'imatges.
+
+<img width="732" height="228" alt="image" src="https://github.com/user-attachments/assets/a0ece6eb-854b-4df5-b928-f40409a198a6" />
+
+
+
+
+
 ## CÒPIES DE SEGURETAT I AUTOMATIZACIÓ DE TASQUES
 
 
