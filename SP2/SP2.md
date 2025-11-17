@@ -314,7 +314,23 @@ A /etc/skel/.bash_logout podem configurar que, cada vegada que l'usuari faci log
 
 <img width="732" height="228" alt="image" src="https://github.com/user-attachments/assets/a0ece6eb-854b-4df5-b928-f40409a198a6" />
 
+### Configurem els arxius .bashrc, .bash_logout i .profiles
 
+Colorejem el prompt a .bashrc.
+
+<img width="688" height="118" alt="image" src="https://github.com/user-attachments/assets/bcf79dde-e408-4a71-a19c-5d894077a1bf" />
+
+Afegim un missatge de comiat i neteja del terminal.
+
+<img width="688" height="118" alt="image" src="https://github.com/user-attachments/assets/d7113fe6-ee5e-4256-acc2-9b726ac5f431" />
+
+Afegim variables d'entorn i PATH millorat.
+
+<img width="688" height="118" alt="image" src="https://github.com/user-attachments/assets/673b522b-5e39-4fff-993b-2d768546ae88" />
+
+Apliquem els canvis.
+
+<img width="688" height="118" alt="image" src="https://github.com/user-attachments/assets/d2619f80-0ff0-4511-a76d-476c8460977d" />
 
 
 
