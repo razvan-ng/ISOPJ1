@@ -333,7 +333,6 @@ Apliquem els canvis.
 <img width="688" height="118" alt="image" src="https://github.com/user-attachments/assets/d2619f80-0ff0-4511-a76d-476c8460977d" />
 
 
-
 ## CÒPIES DE SEGURETAT I AUTOMATIZACIÓ DE TASQUES
 
 
