@@ -333,6 +333,48 @@ Apliquem els canvis.
 <img width="688" height="118" alt="image" src="https://github.com/user-attachments/assets/d2619f80-0ff0-4511-a76d-476c8460977d" />
 
 
+### Gestió de permissos
+
+Creem una carpeta i un arxiu de prova. Després, donem propietat a l'usuari nick de tots els arxius i subcarpetes que hi ha dins de la carpeta prova.
+
+<img width="536" height="387" alt="image" src="https://github.com/user-attachments/assets/8ff62e27-80be-4829-8a40-cb2007aa5f77" />
+
+Donem tots els permisos al propietari, lectura i execució al grup, i cap accés a la resta d'usuaris amb chmod 750.
+
+<img width="514" height="277" alt="image" src="https://github.com/user-attachments/assets/f003e62c-c73b-4a2c-925f-c473d3aead39" />
+
+Assignem l'usuari i el grup nick a la carpeta palomes i a tot el seu contingut. Després canviem el grup propietari de la carpeta palomes i de tot el seu contingut al grup paloma.
+
+<img width="517" height="59" alt="image" src="https://github.com/user-attachments/assets/a9fab930-6d5f-47c1-a5b3-5ed714faa39a" />
+
+Afegim i després es retirem el permís de lectura per a la resta d'usuaris (altres) sobre la carpeta palomes. Comprovem els canvis aplicats.
+
+<img width="514" height="277" alt="image" src="https://github.com/user-attachments/assets/4f99f629-e5e7-438e-945e-dfced3717b53" />
+
+Verifiquem que l'usuari nick pot crear fitxers al directori, mentre que comprovem que l'usuari cire té denegats els permisos per escriure o esborrar res.
+
+<img width="577" height="432" alt="image" src="https://github.com/user-attachments/assets/d5baa227-033b-4ac8-9562-7d29f0357820" />
+
+Verifiquem que l'usuari ferran no té permís per entrar al directori palomes ni per llistar-ne el contingut.
+
+<img width="610" height="208" alt="image" src="https://github.com/user-attachments/assets/eef74c31-9cf4-42fb-8402-422cd6d8e85c" />
+
+Afegim els usuaris ferran i deivy al grup paloma i atorguem permís d'escriptura al grup sobre la carpeta palomes.
+
+<img width="493" height="239" alt="image" src="https://github.com/user-attachments/assets/a13219fd-a302-4bb9-8858-d267f99e3668" />
+
+Verifiquem que l'usuari deivy pot crear fitxers al directori, però comprovem que l'usuari ferran no té permís per esborrar l'arxiu que ha creat el seu company.
+
+<img width="579" height="338" alt="image" src="https://github.com/user-attachments/assets/98184961-f3b3-43c2-b091-be771efcb74b" />
+
+Llistem els detalls dels permisos i propietaris dels fitxers, i comprovem que l'intent d'esborrar l'arxiu ddd falla perquè aquest no existeix.
+
+<img width="500" height="271" alt="image" src="https://github.com/user-attachments/assets/aa8d566e-6c94-4896-8cc9-b2e05f08e226" />
+
+Assignem el permís especial "Sticky Bit" i accés total per al grup a la carpeta palomes, verificant que ara apareix una "T" al final de la línia de permisos.
+
+<img width="586" height="471" alt="image" src="https://github.com/user-attachments/assets/3bed13c0-4fbb-447b-8773-ad49bc907810" />
+
 ## CÒPIES DE SEGURETAT I AUTOMATIZACIÓ DE TASQUES
 
 
