@@ -335,6 +335,8 @@ Apliquem els canvis.
 
 ### Gestió de permissos
 
+#### Permissos UOG
+
 Creem una carpeta i un arxiu de prova. Després, donem propietat a l'usuari nick de tots els arxius i subcarpetes que hi ha dins de la carpeta prova.
 
 <img width="536" height="387" alt="image" src="https://github.com/user-attachments/assets/8ff62e27-80be-4829-8a40-cb2007aa5f77" />
@@ -374,6 +376,43 @@ Llistem els detalls dels permisos i propietaris dels fitxers, i comprovem que l'
 Assignem el permís especial "Sticky Bit" i accés total per al grup a la carpeta palomes, verificant que ara apareix una "T" al final de la línia de permisos.
 
 <img width="586" height="471" alt="image" src="https://github.com/user-attachments/assets/3bed13c0-4fbb-447b-8773-ad49bc907810" />
+
+#### Permissos ACL
+
+Creem una carpeta compartida amb accés total (777) i generem un arxiu al seu interior amb permisos restringits (640) perquè la resta d'usuaris no hi puguin accedir.
+
+<img width="548" height="183" alt="image" src="https://github.com/user-attachments/assets/9c61bbfa-81b0-457f-95a0-01282bca0aa4" />
+
+Donem permisos concrets a l'usuari roig perquè pugui llegir i escriure al fitxer proves2.
+
+<img width="662" height="27" alt="image" src="https://github.com/user-attachments/assets/43d7b3a4-0efc-4904-ad50-21989288805c" />
+
+Comprovem amb getfacl que l'excepció s'ha aplicat correctament, veient que l'usuari roig té permisos específics de lectura i escriptura sobre el fitxer.
+
+<img width="490" height="258" alt="image" src="https://github.com/user-attachments/assets/878bddd7-078b-4f57-91c4-4a9c1223a821" />
+
+Comprovem que l'usuari blau no pot accedir al fitxer proves2, rebent un missatge d'error de "Permission denied" en intentar obrir-lo.
+
+<img width="739" height="478" alt="image" src="https://github.com/user-attachments/assets/08857596-1ef6-430d-a5fc-0b755ac7bc75" />
+
+Verifiquem que l'usuari roig pot accedir i editar l'arxiu proves2 sense cap problema, confirmant que els permisos especials (ACL) funcionen correctament.
+
+<img width="739" height="478" alt="image" src="https://github.com/user-attachments/assets/5a432b18-8e15-4e89-aea0-e5daf9e781e8" />
+
+Eliminem tots els permisos especials (ACL) de l'arxiu proves2 per deixar-lo net i tornar al seu estat original.
+
+<img width="504" height="185" alt="image" src="https://github.com/user-attachments/assets/1a0a9217-1d9a-474a-bc28-e4f869574f9a" />
+
+Retirem tots els permisos a l'usuari roig sobre la carpeta compartida mitjançant setfacl, impedint-li qualsevol mena d'accés.
+
+<img width="569" height="54" alt="image" src="https://github.com/user-attachments/assets/6b865ba1-b437-4ba7-b93d-5194e6aa28d4" />
+
+Comprovem que l'usuari roig no pot accedir al directori compartida i rep un missatge de permís denegat en intentar entrar-hi.
+
+<img width="388" height="54" alt="image" src="https://github.com/user-attachments/assets/d2602e87-b0cf-43de-915d-ab8854b7bc7c" />
+
+#### Configuració de màscara
+
 
 ## CÒPIES DE SEGURETAT I AUTOMATIZACIÓ DE TASQUES
 
