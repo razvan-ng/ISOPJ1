@@ -413,6 +413,26 @@ Comprovem que l'usuari roig no pot accedir al directori compartida i rep un miss
 
 #### Configuració de màscara
 
+Verifiquem el valor de la màscara (umask) i observem com canvia automàticament quan passem de l'usuari estàndard a l'administrador (root), fent-se més restrictiva.
+
+<img width="480" height="270" alt="image" src="https://github.com/user-attachments/assets/6fb58dd0-524b-4701-84fa-561129411b69" />
+
+Editem el fitxer de configuració /etc/login.defs per establir una màscara (umask) definitiva que s'aplicarà automàticament a tots els usuaris, tant als actuals com als que crearem en el futur.
+
+<img width="480" height="270" alt="image" src="https://github.com/user-attachments/assets/9eb48cdd-f37e-4afe-a3a1-1b41e828da12" />
+
+Editem el fitxer de configuració personal .profile per establir una màscara (umask) que s'aplicarà exclusivament a aquest usuari cada cop que iniciï sessió, sense afectar la resta del sistema.
+
+<img width="480" height="270" alt="image" src="https://github.com/user-attachments/assets/9a782f45-e8be-4b23-a9a3-e0a7393f316d" />
+
+Modifiquem temporalment la màscara (umask) per agilitzar la feina, aconseguint que els nous fitxers i carpetes es creïn directament com a privats sense haver de canviar els permisos manualment després.
+
+<img width="480" height="270" alt="image" src="https://github.com/user-attachments/assets/0f53f45a-615b-4c6f-b442-34acd100ae4f" />
+
+Modifiquem la línia corresponent al fitxer de configuració global login.defs i guardem els canvis per establir la màscara definitiva per a tots els usuaris del sistema.
+
+<img width="480" height="270" alt="image" src="https://github.com/user-attachments/assets/ccc07b6a-27cd-44c3-bb38-e8d8986a01df" />
+
 
 ## CÒPIES DE SEGURETAT I AUTOMATIZACIÓ DE TASQUES
 
