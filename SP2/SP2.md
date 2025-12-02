@@ -101,6 +101,16 @@ Comprovem que les configuracions s'han aplicat correctament.
 ## GESTIÓ DE PROCESSOS
 
 
+
+
+
+
+
+
+
+
+
+
 ## GESTIÓ D'USUARIS, GRUPS I PERMISOS
 
 ### Fitxers implicats
@@ -442,10 +452,7 @@ Modifiquem la línia corresponent al fitxer de configuració global login.defs i
 
 Una còpia de seguretat és el **procés sistemàtic de replicació d'actius de dades**(fitxers, bases de dades, sistemes operatius) amb l'objectiu de garantir la integritat i la disponibilitat de la informació. La seva funció principal és permetre la restauració del sistema a un punt anterior en el temps (rollback) després d'un esdeveniment de pèrdua de dades (error humà, corrupció de software, fallada de hardware o ciberatac com el ransomware).
 
-### 1.2. Tipus de còpies de seguretat. ###
-
-
-## Tipus de Còpies de Seguretat (Backup Strategies)
+#### 1.2. Tipus de còpies de seguretat. ####
 
 | Tipus | Funcionament | Temps d'Execució (Backup) | Ús d'Emmagatzematge | Velocitat de Restauració (RTO) | Cadena de Recuperació |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -453,13 +460,65 @@ Una còpia de seguretat és el **procés sistemàtic de replicació d'actius de 
 | **Incremental** | Copia només les dades modificades des de l'**últim backup de qualsevol tipus**. | **Molt Ràpida**<br>Processa el mínim volum necessari. | **Molt Baix**<br>Màxima eficiència d'espai. | **Lenta**<br>Requereix processar múltiples fitxers. | 1. Última Completa.<br>2. Totes les Incrementals seqüencials fins al punt desitjat. |
 | **Diferencial** | Copia les dades modificades des de l'**últim backup COMPLET**. És acumulativa. | **Moderada**<br>Més lenta que la incremental a mesura que passa el temps. | **Moderat**<br>Major que la incremental (redundància de canvis). | **Ràpida**<br>Més senzilla que la incremental. | 1. Última Completa.<br>2. Només l'última Diferencial. |
 
+### 2. Comandes per backup. ###
+
+#### 2.1. CP (Copy) ####
+
+És la comanda estàndard de sistemes UNIX/Linux per a la replicació d'arxius i directoris a nivell de sistema de fitxers. Es considera una **còpia no intel·ligent** perquè, per defecte, **llegeix l'origen i reescriu completament el destí sense analitzar si les dades ja existeixen o si han estat modificades.** La seva operativitat es limita generalment a l'àmbit local (o unitats muntades) i resulta ineficient per a polítiques de backup recurrents, ja que no optimitza l'ample de banda ni els temps d'E/S (Entrada/Sortida), consumint recursos innecessaris en tornar a copiar dades idèntiques.
+
+#### 2.2. rSync (Remote Sync) ####
+És una eina avançada de sincronització de fitxers dissenyada per treballar de manera eficient tant en entorns **locals com remots** (generalment via SSH). La seva característica principal és la **intel·ligència en la transferència**: utilitza un algoritme de "delta encoding" que compara els fitxers d'origen i destí per identificar blocs de dades modificats. Això **permet transmetre únicament les diferències (i no el fitxer sencer)**, reduint dràsticament el consum d'ample de banda i el temps d'execució, convertint-la en l'estàndard de facto per a còpies de seguretat incrementals i miralls (mirroring) de servidors.
 
 
-#### a) Completa ####
+#### 2.3. DD (Data Duplicator) ####
+Més que una eina de còpia de fitxers, és una utilitat de **clonació a baix nivell** que opera directament sobre els blocs del dispositiu, ignorant l'estructura del sistema de fitxers. **Realitza una còpia exacta bit a bit** (raw copy) des d'un dispositiu d'entrada a un de sortida. Això significa que **clona absolutament tot: la taula de particions, el sector d'arrencada (MBR/GPT), les dades i fins i tot l'espai buit o esborrat.** És l'eina utilitzada per crear imatges forenses, còpies de seguretat completes del sistema operatiu o clonar discos durs sencers, garantint una rèplica idèntica a l'original
 
-#### b) Diferencial ####
+### 3. Posada en pràctica de les comandes de backup. ###
 
-#### c) Incremental ####
+En la màquina virtual creem dues unitats d'1GB cadascuna.
+
+<img width="735" height="482" alt="image" src="https://github.com/user-attachments/assets/b51ff3a5-89ec-4ace-8754-a71d1831e87e" />
+
+Els donem format ext4 als dos i li fem només una partició a cada disc.
+
+<img width="735" height="482" alt="image" src="https://github.com/user-attachments/assets/62007772-9585-4351-94af-e3f4e21482e6" />
+
+Creem una carpeta que copiarem. Montem la unitat sdb1 en una carpeta *copies* a */var*.
+
+<img width="735" height="295" alt="image" src="https://github.com/user-attachments/assets/8f866957-a3a2-49e8-867d-b50367082d29" />
+
+
+#### 3.1. CP ####
+
+Realitzem una còpia recursiva de les dades i verifiquem que, encara que esborrem la carpeta original després de crear un fitxer de prova, la còpia de seguretat es manté intacta i independent al nou directori.
+
+<img width="735" height="295" alt="image" src="https://github.com/user-attachments/assets/0b9f1651-c6a5-4580-8352-19f724d70f14" />
+
+#### 3.2. rSync ####
+
+Utilitzem cp per fer còpies directes de fitxers, mentre que fem servir rsync per sincronitzar carpetes de manera intel·ligent, actualitzant només les dades que han canviat.
+
+<img width="641" height="399" alt="image" src="https://github.com/user-attachments/assets/fe1bbc63-56ee-48d9-9cf9-b0f02138abe7" />
+
+#### 3.3. DD ####
+
+### 4. Posada en pràctica de programes de backup. ###
+
+#### 4.1. Déjà Dup ####
+
+#### 4.2. Duplicity ####
+
+### 5. Teoria d'automatització de scrips, cron i anacron. ###
+
+### 6. Posada en pràctica d'automatització.
+
+#### 6.1. Cron ####
+
+#### 6.2. Anacron ####
+
+
+
+
 
 
 ## QUOTES D'USUARI
