@@ -438,7 +438,29 @@ Modifiquem la línia corresponent al fitxer de configuració global login.defs i
 
 ### 1. Teoria de còpies de seguretat. ###
 
-#### __1.1. Què és una còpia de seguerat? ####
+#### 1.1. Què és una còpia de seguerat? ####
+
+Una còpia de seguretat és el **procés sistemàtic de replicació d'actius de dades**(fitxers, bases de dades, sistemes operatius) amb l'objectiu de garantir la integritat i la disponibilitat de la informació. La seva funció principal és permetre la restauració del sistema a un punt anterior en el temps (rollback) després d'un esdeveniment de pèrdua de dades (error humà, corrupció de software, fallada de hardware o ciberatac com el ransomware).
+
+### 1.2. Tipus de còpies de seguretat. ###
+
+
+## Tipus de Còpies de Seguretat (Backup Strategies)
+
+| Tipus | Funcionament | Temps d'Execució (Backup) | Ús d'Emmagatzematge | Velocitat de Restauració (RTO) | Cadena de Recuperació |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Completa**<br>*(Full)* | Copia **totes** les dades seleccionades, hagin canviat o no. | **Lenta**<br>Processa el major volum de dades. | **Alt**<br>Requereix molta capacitat. | **Molt Ràpida**<br>No depèn d'altres fitxers. | 1. Restaurar l'última Còpia Completa. |
+| **Incremental** | Copia només les dades modificades des de l'**últim backup de qualsevol tipus**. | **Molt Ràpida**<br>Processa el mínim volum necessari. | **Molt Baix**<br>Màxima eficiència d'espai. | **Lenta**<br>Requereix processar múltiples fitxers. | 1. Última Completa.<br>2. Totes les Incrementals seqüencials fins al punt desitjat. |
+| **Diferencial** | Copia les dades modificades des de l'**últim backup COMPLET**. És acumulativa. | **Moderada**<br>Més lenta que la incremental a mesura que passa el temps. | **Moderat**<br>Major que la incremental (redundància de canvis). | **Ràpida**<br>Més senzilla que la incremental. | 1. Última Completa.<br>2. Només l'última Diferencial. |
+
+
+
+#### a) Completa ####
+
+#### b) Diferencial ####
+
+#### c) Incremental ####
+
 
 ## QUOTES D'USUARI
 
