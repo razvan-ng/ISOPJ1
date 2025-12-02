@@ -436,6 +436,9 @@ Modifiquem la línia corresponent al fitxer de configuració global login.defs i
 
 ## CÒPIES DE SEGURETAT I AUTOMATIZACIÓ DE TASQUES
 
+### 1. Teoria de còpies de seguretat. ###
+
+#### __1.1. Què és una còpia de seguerat? ####
 
 ## QUOTES D'USUARI
 
