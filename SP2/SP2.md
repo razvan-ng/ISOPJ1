@@ -566,11 +566,6 @@ Es clona la partició sdb1 a sdc1 mitjançant dd i es verifica la integritat de 
 <img width="732" height="483" alt="image" src="https://github.com/user-attachments/assets/b29ec318-8009-4b81-834a-6f8c9de39fa0" />
 
 
-
-
-
-
-
 ### 4. Posada en pràctica de programes de backup. ###
 
 #### 4.1. Déjà Dup ####
@@ -579,9 +574,32 @@ Es clona la partició sdb1 a sdc1 mitjançant dd i es verifica la integritat de 
 
 ### 5. Teoria d'automatització de scrips, cron i anacron. ###
 
+
+##### 5.1. Cron: #####
+
+- Funciona com un rellotge de precisió. Pots programar tasques al minut exacte (ex: "Dimarts a les 14:05").
+
+- Punt feble: Si a les 14:05 l'ordinador està apagat, el Cron no se n'assabenta. Quan encenguis l'ordinador a les 15:00, la tasca no s'executarà fins al dimarts següent.
+
+- Ús: Servidors que estan encesos 24/7 o tasques que han de passar sí o sí a una hora (com enviar un informe al final de la jornada).
+
+##### 5.2. Anacron: #####
+
+- No entén de minuts o hores exactes, sinó de freqüència (1 dia, 7 dies, 1 mes).
+
+- Punt fort (Persistència): Guarda un fitxer amb la data de l'última execució. Si tens programada una tasca "diària" i tens l'ordinador apagat 3 dies, tan bon punt l'encenguis, l'Anacron veurà que la data ha caducat i executarà la tasca pendent immediatament.
+
+- Ús: Manteniment del sistema (rotació de logs, actualització de bases de dades locate) en ordinadors personals o portàtils que s'apaguen cada nit.
+
 ### 6. Posada en pràctica d'automatització.
 
 #### 6.1. Cron ####
+
+Documents importants: /etc/crontan
+
+<img width="732" height="483" alt="image" src="https://github.com/user-attachments/assets/0f481bfc-3a8d-43d9-994e-319e50d9cb75" />
+
+
 
 #### 6.2. Anacron ####
 
