@@ -100,16 +100,75 @@ Comprovem que les configuracions s'han aplicat correctament.
 
 ## GESTIÓ DE PROCESSOS
 
+Distingim entre un servei, que és el programa que s'executa en segon pla (conegut com a dimoni), i el procés, que correspon a l'execució activa de les tasques d'aquest programa al sistema.
 
+Utilitzem la comanda pstree per visualitzar l'estructura de processos en forma d'arbre jeràrquic; afegim l'opció -p per veure els identificadors (PID) de cada tasca i especifiquem l'usuari per filtrar i veure només la seva activitat.
 
+<img width="866" height="670" alt="image" src="https://github.com/user-attachments/assets/7916a622-9a7c-41c4-8fd3-8d2f80e9fd4d" />
 
+Tenim un altre procés de terminal obert en el usuari razvan i amb pstree el podem veure.
 
+<img width="866" height="670" alt="image" src="https://github.com/user-attachments/assets/4c2cb0a2-8ed3-42a5-af1a-249a336fce0a" />
 
+D'altra banda, podem aplicar la comanda grep per filtrar l'arbre de processos i focalitzar-nos únicament en aquells que contenen la paraula "terminal". Això ens permet identificar ràpidament el gnome-terminal i els seus processos fills.
 
+<img width="866" height="670" alt="image" src="https://github.com/user-attachments/assets/e9262040-e75c-4ca5-a14d-3a65b0b78750" />
 
+El pstree mostra la jerarquia visual; el ps aux detalla informació tècnica com el PID i la memòria.
 
+<img width="866" height="670" alt="image" src="https://github.com/user-attachments/assets/8a63ca3f-a2be-469a-96a1-782a6c97521a" />
 
+Podem filtrar els processos amb | grep (nom), per exemple, ps aus | grep terminal
 
+<img width="810" height="135" alt="image" src="https://github.com/user-attachments/assets/75940523-9f1e-44b4-8092-9ce992089bf1" />
+
+Amb grep filtrem la sortida per mostrar només els processos propietat d'un usuari específic, com "razvan".
+
+<img width="877" height="266" alt="image" src="https://github.com/user-attachments/assets/8b1ceacb-f3ff-412e-b04b-8bc9e53a62f5" />
+
+Top monitoritza el rendiment en temps real, classificant els processos segons l'ús intensiu de CPU i memòria.
+
+<img width="926" height="670" alt="image" src="https://github.com/user-attachments/assets/92253881-eaae-4ff1-a877-4a94d9376334" />
+
+Htop és una alternativa visual i interactiva que facilita cercar (F3) i matar (F9) processos còmodament.
+
+<img width="926" height="670" alt="image" src="https://github.com/user-attachments/assets/f903e15e-9bb8-497e-b1ee-457f4b6af2cb" />
+
+Per buscar un procés, premem F4 i busquem el procés que volem.
+
+<img width="1186" height="629" alt="image" src="https://github.com/user-attachments/assets/3584db2b-db93-4696-bf41-ccbf0607a989" />
+
+Un cop l'hem trobat premem enter. Un cop sel·leccionat premem F9 i enter per matar-lo.
+
+<img width="1186" height="629" alt="image" src="https://github.com/user-attachments/assets/a094a6b9-2eb1-43c0-80fe-b50a44b1ba69" />
+
+També tenim l’alternativa gràfica BTOP. (Igual que HTOP).
+
+<img width="1166" height="670" alt="image" src="https://github.com/user-attachments/assets/86cd95aa-794c-419a-9fcb-9ba2e8a865e8" />
+
+Ctrl + Z atura temporalment l'execució del procés actiu, enviant-lo al segon pla en estat suspès (Stopped). Per comprovar els estats dels processos ho comprovem amb jobs.
+
+<img width="419" height="197" alt="image" src="https://github.com/user-attachments/assets/bab964f4-87a0-4c2c-9378-ab53fc580c4a" />
+
+Per tornar a portar-lo a primer pla executem fg (num_jobs).
+
+<img width="247" height="82" alt="image" src="https://github.com/user-attachments/assets/b3799dfb-85d3-4529-a81c-96bed513044f" />
+
+Ctrl + C envia el senyal SIGINT per interrompre l'execució; jobs verifica si queden tasques actives en segon pla.
+
+<img width="342" height="51" alt="image" src="https://github.com/user-attachments/assets/540350d2-f64c-4240-af6d-f8ac2ae92b07" />
+
+Afegint & enviem el procés al segon pla, recuperant el terminal immediatament i obtenint el seu PID.
+
+<img width="343" height="66" alt="image" src="https://github.com/user-attachments/assets/13bac614-2c71-4424-a622-a1d66eef274d" />
+
+Per donar més prioritat (temporalment i per un procés que s’està executant) (nomes usuari root) fem: renice -n -19 -p [PID]
+
+-19 és màxima prioritat
+
+Amb nice podem establir prioritat a un procés
+
+nice -n -19 [proces]
 
 ## GESTIÓ D'USUARIS, GRUPS I PERMISOS
 
