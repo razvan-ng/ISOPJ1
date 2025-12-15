@@ -561,6 +561,16 @@ Utilitzem cp per fer còpies directes de fitxers, mentre que fem servir rsync pe
 
 #### 3.3. DD ####
 
+Es clona la partició sdb1 a sdc1 mitjançant dd i es verifica la integritat de la còpia amb md5sum.
+
+<img width="732" height="483" alt="image" src="https://github.com/user-attachments/assets/b29ec318-8009-4b81-834a-6f8c9de39fa0" />
+
+
+
+
+
+
+
 ### 4. Posada en pràctica de programes de backup. ###
 
 #### 4.1. Déjà Dup ####
