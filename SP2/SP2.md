@@ -568,12 +568,68 @@ Es clona la partició sdb1 a sdc1 mitjançant dd i es verifica la integritat de 
 
 ### 4. Posada en pràctica de programes de backup. ###
 
-#### 4.1. Déjà Dup ####
+#### 4.1. BorgBackup ####
 
-#### 4.2. Duplicity ####
+##### 4.1.1. Creació del script d'automatizació #####
+
+<img width="606" height="394" alt="image" src="https://github.com/user-attachments/assets/57375308-b590-4b8e-90c3-4701462984b2" />
+
+Inicialitzem el dipòsit de còpies amb borg init --encryption=repokey /ruta/a/diposit
+
+<img width="591" height="385" alt="image" src="https://github.com/user-attachments/assets/b0b338d4-9aeb-438c-b10f-c636d1e15a5a" />
+
+Creem un script el qual ens ajudarà a fer la còpia de seguretat automàticament. 
+
+REPO="ruta_repositori"
+FILES="ruta_arxius"
+
+borg create --stats --compression lz4 \
+    "$REPO"::backup-$(date +%Y-%m-%d_%H-%M) \
+    "$FILES"
+
+borg prune -v --keep-daily=7 --keep-weekly=4 --keep-monthly=3 "$REPO"
+
+<img width="553" height="30" alt="image" src="https://github.com/user-attachments/assets/53184a91-31eb-4ba9-b38c-fd4613548070" />
+
+El fem executable amb chmod +x ruta_script.
+
+<img width="751" height="404" alt="image" src="https://github.com/user-attachments/assets/8f95e7bb-900e-4770-a0de-dab840e77f21" />
+
+Comprovem que s'hagi creat correctament i l'executem manualment per fer la comprovació.
+
+<img width="557" height="127" alt="image" src="https://github.com/user-attachments/assets/f24d5aa8-672e-471e-9afb-30664044612d" />
+
+Per configurar les còpies automàtiques farem servir CRON. Accedim amb crontab -e i triem la primera opcció.
+
+<img width="741" height="487" alt="image" src="https://github.com/user-attachments/assets/9cbf60ae-9f12-4866-b5c9-697c79e1da7e" />
+
+Al final del document afegim 1 0 * * * /home/usuari/backup.sh >> /home/usuari/backup.log 2>&1
+
+1 0: S’executarà a les 10 del matí.
+
+##### 4.1.2. Recuperació en cas de pèrdua #####
+
+<img width="741" height="181" alt="image" src="https://github.com/user-attachments/assets/4e706e31-fe26-42e4-9656-a06f25845f0e" />
+
+Consultem les còpies creades borg extract [ruta_directori]
+
+<img width="737" height="227" alt="image" src="https://github.com/user-attachments/assets/3efdb449-6bcd-482b-8c28-23c3a98232dc" />
+
+Havent escollit la còpia que volem recuperar executem borg extract [ruta_directori]::[nom_backup] per restaurar tot el directori de la còpia.
+
+- Per recuperar només una carpeta executem:
+
+borg extract [ruta_directori]::[nom_backup] [ruta_carpeta_a_restaurar]
+
+- Per recuperar només un arxiu executem:
+
+borg extract [ruta_directori]::[nom_backup] [ruta_arxiu_a_restaurar]
+
+<img width="737" height="482" alt="image" src="https://github.com/user-attachments/assets/eb05646a-156a-4cd0-a51f-20c78c21c9db" />
+
+Podem verificar també la integritat, la mida i les estadístiques de la còpia amb borg infor [ruta_directori]::[nom_backup].
 
 ### 5. Teoria d'automatització de scrips, cron i anacron. ###
-
 
 ##### 5.1. Cron: #####
 
