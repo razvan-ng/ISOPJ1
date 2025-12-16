@@ -1,4 +1,4 @@
----
+<img width="1211" height="413" alt="image" src="https://github.com/user-attachments/assets/0ce99670-725a-4ffa-b323-a5cbbcb204d4" /><img width="1211" height="413" alt="image" src="https://github.com/user-attachments/assets/a394bd00-a3cf-410f-9766-709ef703e924" />---
 layout: default
 title: "SPRINT 2: INSTAL·LACIÓ, CONFIGURACIÓ DE PROGRAMARI DE BASE I GESTIÓ DE FITXERS"
 ---
@@ -629,6 +629,65 @@ borg extract [ruta_directori]::[nom_backup] [ruta_arxiu_a_restaurar]
 
 Podem verificar també la integritat, la mida i les estadístiques de la còpia amb borg infor [ruta_directori]::[nom_backup].
 
+#### 4.2. Déjà Dup ####
+
+##### 4.2.1. Configuració de backup #####
+
+<img width="735" height="486" alt="image" src="https://github.com/user-attachments/assets/89bed8ac-15a6-47cb-8243-04afad79a8be" />
+
+Primer haurem d'instal·lar el sistema de paqueteria Flatpak, ja que el programa es troba en els repositoris de Flathub.
+
+<img width="1211" height="413" alt="image" src="https://github.com/user-attachments/assets/56352430-f293-4c0c-9ca0-699884a700d9" />
+
+Un cop el tenim instal·lat haurem d'accedir a la pàgina de descàrrega i instal·lació del [Déjà Dup](https://flathub.org/en/apps/org.gnome.DejaDup). 
+
+<img width="1212" height="270" alt="image" src="https://github.com/user-attachments/assets/83b72909-1a59-4fa9-af1c-60a5e34d8444" />
+
+Fem clic sobre Install i tanquem aquest pop-up ja que no ens funcionarà d'aquesta manera, haurem de descarregar l'arxiu flatpak.
+
+<img width="736" height="318" alt="image" src="https://github.com/user-attachments/assets/c1a563f3-d00e-476b-a63c-500dbaea35df" />
+
+Fem clic sobre _.flatpakref file_ per descarregar-nos l'arxiu.
+
+<img width="736" height="483" alt="image" src="https://github.com/user-attachments/assets/e30b026a-e28d-4a98-b930-ddc93006a7a1" />
+
+Un cop l'hem descarregat hem d'obrir un terminal a la carpeta de destinació. Executem la comanda flatpak install ./[nom arxiu] i esperem a que acabi.
+
+<img width="736" height="483" alt="image" src="https://github.com/user-attachments/assets/211ee571-de94-4f4f-b6d1-a2336a4d2ad4" />
+<img width="551" height="454" alt="image" src="https://github.com/user-attachments/assets/8e98a3c7-26a4-43c5-b163-124739380858" />
+
+Un cop ha acabat ja el podem executar amb flatpak run org.gnome.DejaDup.
+
+<img width="551" height="454" alt="image" src="https://github.com/user-attachments/assets/eaf1cd58-bb4c-4a46-8bca-33535cd0867e" />
+
+Aquest programa és molt intuïtiu. Escollim l'ubicació d'emmagatzematge (el nostre ordinador, encara que el programa té opcció de guardar al núvol), les carpetes que volem copiar i les que volem ignorar. 
+
+<img width="551" height="454" alt="image" src="https://github.com/user-attachments/assets/de912750-65a9-4cf2-8d9a-7db8061fd78b" />
+
+Podem bloquejar la còpia amb contrasenya qual vulguem recuperar el backup.
+
+<img width="551" height="454" alt="image" src="https://github.com/user-attachments/assets/7afdc184-3560-4a71-b8a1-12589131bf54" />
+
+Ja l'haurem fet correctament. Ara podem configurar còpies automàtiques.
+
+<img width="1206" height="428" alt="image" src="https://github.com/user-attachments/assets/415debf5-7acf-4703-90b9-b567be64ef87" />
+
+Però abans de fer-ho li hem de donar permissos a Backups d'executar-se en segon plà. Si no ens apareix el programa a la llista d'aplicacions només hem de tancar la sessió i tornar a entrar.
+
+<img width="551" height="462" alt="image" src="https://github.com/user-attachments/assets/0788d422-ca0e-4c1c-960d-64251e8d0309" />
+
+Ara ja podrem configurar còpies automàtiques.
+
+##### 4.2.2. Recuperació en cas de pèrdua #####
+
+<img width="551" height="462" alt="image" src="https://github.com/user-attachments/assets/f2bb5e89-01fa-4ffb-b798-e8415f271fc4" />
+<img width="551" height="462" alt="image" src="https://github.com/user-attachments/assets/2b549e35-0233-4647-8157-27f78a4d4269" />
+
+Accedim al programa i entrem a l'apartat _Browse Backups_. Alli tindrem totes les còpies que haurem fet.
+
+<img width="1207" height="249" alt="image" src="https://github.com/user-attachments/assets/023a497a-43d1-4eea-93a0-8da61a3f9be1" />
+
+Si fem clic a sobre del backup podrem accedir a la còpia de seguretat. En el meu cas com no he configurat cap contrasenya m'entra sense necessitat de contrasenya, però en el cas que configurem una contrasenya d'encriptació ens la demanarà per accedir-hi.
 ### 5. Teoria d'automatització de scrips, cron i anacron. ###
 
 ##### 5.1. Cron: #####
