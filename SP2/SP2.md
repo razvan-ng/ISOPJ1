@@ -595,17 +595,57 @@ Es clona la partició sdb1 a sdc1 mitjançant dd i es verifica la integritat de 
 
 #### 6.1. Cron ####
 
-Documents importants: /etc/crontan
+Documents importants: /etc/crontab
+
+Aquest fitxer gestiona les tasques programades de tot el sistema. A diferència dels cron personals, aquí cal especificar l'usuari (ex: root) que executarà la comanda.
 
 <img width="732" height="483" alt="image" src="https://github.com/user-attachments/assets/0f481bfc-3a8d-43d9-994e-319e50d9cb75" />
 
+Amb crontab -u [usuari] -e editem la taula de programació personal d'un usuari concret. A diferència de /etc/crontab, aquí no cal especificar l'usuari a cada línia perquè ja estem dins el seu fitxer.
 
+<img width="732" height="483" alt="image" src="https://github.com/user-attachments/assets/57b5dd14-afc1-42ff-86f7-ea7e4b8d783a" />
+
+<img width="732" height="483" alt="image" src="https://github.com/user-attachments/assets/b75a8678-812c-440b-932f-279abb8276fe" />
+
+Amb crontab -e -u [usuari] podem programar scripts que s'executaran automàticament
+
+<img width="732" height="165" alt="image" src="https://github.com/user-attachments/assets/6e1c9217-fc43-44fa-a277-66d9d4efcb3e" />
+
+Diferents direcoris de manteniment amb tasques automatizades a executar.
 
 #### 6.2. Anacron ####
 
+<img width="732" height="482" alt="image" src="https://github.com/user-attachments/assets/2d0b89b8-0c50-4888-9603-05c0b14a5e27" />
 
+Aquest fitxer controla la periodicitat de les tasques de manteniment. A diferència del cron normal, aquí no hi ha hores exactes, sinó que es defineix una freqüència en dies (1, 7, monthly) i un retard en minuts (5, 10, 15) perquè l'ordinador no es col·lapsi executant-ho tot just arrencar.
 
+S'utilitza la comanda run-parts per executar, d'un sol cop, tots els scripts que hi hagi dins els directoris de manteniment (/etc/cron.daily, /etc/cron.weekly, etc.).
 
+#### 6.3. Creació d'scripts ####
+
+<img width="972" height="482" alt="image" src="https://github.com/user-attachments/assets/d1efd35c-4079-4af0-a824-c88d44e7a143" />
+
+Aquest script de Bash ens permet automatitzar la creació de còpies de seguretat. Ens facilita empaquetar tot el contingut de la carpeta Documents en un arxiu únic a l'escriptori. A més, ens assegura mantenir un històric ordenat, ja que afegeix automàticament la data i l'hora actuals al nom del fitxer.
+
+<img width="650" height="486" alt="image" src="https://github.com/user-attachments/assets/0a024f07-692d-4cb7-8689-be4ef314f952" />
+
+Amb la comanda chmod +x, assignem permisos d'execució al nostre script copies.sh.  Finalment, verifiquem l'estat amb ls -l, confirmant que ara disposa dels permisos necessaris-
+
+<img width="671" height="114" alt="image" src="https://github.com/user-attachments/assets/68f08bf6-ea74-4986-aafc-b5c15bc226de" />
+
+Dins el directori Documents, generem fitxers de mostra. Creem dos arxius buits (PT1.Varas i PT2.Varas) per simular contingut.
+
+<img width="711" height="480" alt="image" src="https://github.com/user-attachments/assets/93754185-18cb-4bcd-82c5-d9bda06aa941" />
+
+Modifiquem l'arxiu /etc/crontab per programar la tasca automàtica. Afegim una línia que ens permet executar l'script el dia 9 de cada mes a les 13:35. Definim l'usuari root i la ruta de l'arxiu per assegurar que el sistema trobi i llanci la còpia de seguretat puntualment.
+
+<img width="713" height="585" alt="image" src="https://github.com/user-attachments/assets/e68fd08d-bb8a-46ba-8ba4-82bec144fde8" />
+
+Passats uns minuts, obrim l'arxiu resultant per assegurar-nos que s'ha completat correctament. 
+
+<img width="771" height="218" alt="image" src="https://github.com/user-attachments/assets/0673947f-beca-4062-9a58-a9e73245dd39" />
+
+Finalment, copiem l'script dins de /etc/cron.daily, això ens garanteix que la còpia es farà un cop al dia, recuperant l'execució encara que l'ordinador estigués apagat en el moment previst.
 
 
 ## QUOTES D'USUARI
