@@ -647,6 +647,13 @@ Passats uns minuts, obrim l'arxiu resultant per assegurar-nos que s'ha completat
 
 Finalment, copiem l'script dins de /etc/cron.daily, això ens garanteix que la còpia es farà un cop al dia, recuperant l'execució encara que l'ordinador estigués apagat en el moment previst.
 
+<img width="749" height="302" alt="image" src="https://github.com/user-attachments/assets/05ed0fe2-0769-4aad-bc57-4449bb2a0c73" />
+
+Editem el fitxer /etc/anacrontab per controlar quan s'executen les tasques pendents. A la primera línia (1 1 cron.daily), configurem que l'script s'executi una vegada al dia (1) amb un retard d'un minut (1) després de l'inici del sistema.
+
+<img width="749" height="302" alt="image" src="https://github.com/user-attachments/assets/c6c304df-03c0-44d0-8460-0cd73d760c5d" />
+
+Consultant el fitxer /var/spool/anacron/cron.daily, verifiquem la marca de temps de l'última execució (20251209). Aquest registre permet a Anacron saber que la tasca diària ja s'ha completat i no cal tornar-la a executar.
 
 ## QUOTES D'USUARI
 
