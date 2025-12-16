@@ -1,4 +1,4 @@
-<img width="1211" height="413" alt="image" src="https://github.com/user-attachments/assets/0ce99670-725a-4ffa-b323-a5cbbcb204d4" /><img width="1211" height="413" alt="image" src="https://github.com/user-attachments/assets/a394bd00-a3cf-410f-9766-709ef703e924" />---
+---
 layout: default
 title: "SPRINT 2: INSTAL·LACIÓ, CONFIGURACIÓ DE PROGRAMARI DE BASE I GESTIÓ DE FITXERS"
 ---
