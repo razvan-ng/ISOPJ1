@@ -655,6 +655,77 @@ Editem el fitxer /etc/anacrontab per controlar quan s'executen les tasques pende
 
 Consultant el fitxer /var/spool/anacron/cron.daily, verifiquem la marca de temps de l'última execució (20251209). Aquest registre permet a Anacron saber que la tasca diària ja s'ha completat i no cal tornar-la a executar.
 
-## QUOTES D'USUARI
+## QUOTES D'USUARI/DE DISC
+
+### Definició
+
+Una quota d'usuario (o de disc) és un mecanisme d'administració de sistemes que serveix per limitar l'espai d'emmagatgematge o el nombre d'arxius que un usuari (o grup) pot utilitzar en un sistema de fitxers. En entorns compartits amb diversos usuaris aquesta eina és fonamental per evitar que un sol usuari ompli tot el disc dur i bloquegi el sistema per a la resta.
+
+En les quotes d'usuari tenim diferents conceptes clau que hem de saber abans de configurar res; _Soft Limit_, _Hard Limit_ i _Grace Period_. 
+
+#### Soft Limit ####
+
+És un limit d'avís. L'usuari pot superar-lo momentàniament però no per sempre. Aquest rebrà advertències que s'està quedant sense espai. Per exemple; si a Movistar tinc contractats 70GB d'internet de dades mòbils, al consumir 65GB m'enviaran un SMS indicant-me que estic a punt de gastar-me la totalitat del meu tràfic disponible d'internet. 
+
+#### Hard Limit ####
+
+És el límit absolut. L'usuari ha arribat al màxim permès i el sistema bloqueja l'escriptura immediatament si s'intenta superar. No ens permetrà guardar ni un byte més. En la posada a pràctica més abaix ho comprovarem. Seguint l'analogia del _Soft Limit_, ara ja ens hem gastat els 70GB i Movistar ens ha bloquejat la connexió a Internet.
+
+#### Grace Period ####
+
+O període de gràcia en català, és el temps que el sistema dona a l'usuari que ha superat el _Soft Limit_ perquè esborri arxius i torni a estar per sota d'aquest límit. Si passa el temps i no ho ha arreglat, el _Soft Limit_ es converteix en un Hard Limit.
+
+### Posada en pràctica
+
+<img width="737" height="485" alt="image" src="https://github.com/user-attachments/assets/8b16318c-8ac5-49b7-a8b8-7fc83e85c9d8" />
+
+Comprovem els discs que tenim a la nostra VM. Escollim el /dev/sdc1 ja que no l'hem fet servir en la pràctica anterior.
+
+<img width="737" height="485" alt="image" src="https://github.com/user-attachments/assets/6d67895e-7d4d-4ef7-861c-a8e32d467fbd" />
+
+Donem format al disc per fer-lo servir nou.
+
+<img width="737" height="485" alt="image" src="https://github.com/user-attachments/assets/3c41deac-a33a-4b74-9a2c-c66187397776" />
+
+Instal·lem el paquet què ens ajudarà en la nostra feina amb apt install quota.
+
+<img width="737" height="485" alt="image" src="https://github.com/user-attachments/assets/2b785a77-dddb-4e0b-818f-72eaf7ad8ed9" />
+
+<img width="737" height="485" alt="image" src="https://github.com/user-attachments/assets/ee1871e3-ff81-4627-988f-8cece80e74d2" />
+
+Un cop formatat, montem el disc a l'ubicació /mnt/dades_usuaris. Haurem de crear la carpeta dades_usuaris abans de fer el muntatge. Ens hem d'assegurar que configurem correctament els paràmetres ja que sinó ens saltarà el mode d'emergència i no podrem arrancar el SO.
+
+<img width="737" height="485" alt="image" src="https://github.com/user-attachments/assets/72d71b1b-0bfc-4cd0-aa23-fd991e9b54ee" />
+<img width="737" height="485" alt="image" src="https://github.com/user-attachments/assets/182eb799-9502-46a2-8c84-f7666abfa07e" />
+
+Podem comprovar que el disc s'ha montat correctament. Amb el ls, si veiem l'arxiu _lost+found_ significa que està montat. D'altra banda podem comprovar els muntatges dels sistema i comprovar que veiem el nostre disc.
+
+<img width="737" height="485" alt="image" src="https://github.com/user-attachments/assets/4c424d1f-506f-4453-9001-e45a980d14ff" />
+
+Les quotes d'usuari han vingut activades per defecte, però en el cas que no fos així les haurem d'activar amb la comanda quotaon. En la imatge les he desactivat i tornat a activar per veure com es faria.
+
+<img width="737" height="485" alt="image" src="https://github.com/user-attachments/assets/bc313680-175d-48d6-8c2b-609a6415b56b" />
+
+Amb les comandes de la imatge podem comprovar la quota de disc de cada usuari. Amb quota -u [usuari] podem verificar la quota a un usuari especific i amb repquota [particio] podem veure tots els usuaris i la seva quota respectivament.
+
+<img width="728" height="490" alt="image" src="https://github.com/user-attachments/assets/f7bb5350-7c3c-4937-a358-0dd626557aba" />
+
+Amb edquota -u usuari podem configurar els límits. Podem configurar els tres conceptes mencionats a la definició; _Soft Limit_, _Hard Limit_ i _Grace Period_. 
+
+<img width="728" height="490" alt="image" src="https://github.com/user-attachments/assets/4efd98bd-9c90-4fb3-8a66-43433a2f79eb" />
+
+Com l'usuari ha sobrepassat el _Hard Limit_, el quota no l'ha deixat escriure més. L'arxiu s'ha tallat fins la quantitat d'espai que li quedava.
+
+<img width="728" height="490" alt="image" src="https://github.com/user-attachments/assets/f5026346-0aa0-47db-b907-90216405640c" />
+
+Si desactivem el quota podem comprovar que ara l'usuari ja pot fer servir l'espai que vulgui en el disc dur.
+
+<img width="728" height="490" alt="image" src="https://github.com/user-attachments/assets/b9f6622a-9878-4835-a7b1-534f31175845" />
+
+D'altra banda, amb edquota -t podem establir una configuració de quota per a tots els usuaris.
+
+<img width="728" height="490" alt="image" src="https://github.com/user-attachments/assets/24a665ce-5e5f-4197-9ffb-a2233ba62c96" />
+
+Configurem la quota a 15 i després comprovem que els canvis s'han aplicat correctament.
 
 
