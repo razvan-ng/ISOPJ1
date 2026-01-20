@@ -141,3 +141,26 @@ Afegim ldap compat per què primer vagi a comprovar al ldap per fer l’autentic
 
 <img width="890" height="459" alt="image" src="https://github.com/user-attachments/assets/a524b5f1-b00d-493e-abfc-ec9ffd028286" />
 
+Afegim l'última linea al fitxer.
+
+<img width="890" height="459" alt="image" src="https://github.com/user-attachments/assets/83bdeb22-59bb-4fdf-b568-77bd0bd1c6c3" />
+
+Borrem "authtok" en aquest apartat on aparegui.
+
+## 6.6 Modificació fitxer 50-ubuntu.conf
+
+<img width="759" height="106" alt="image" src="https://github.com/user-attachments/assets/6835e1d8-02e4-42fd-972b-bb07843cf7aa" />
+
+Per iniciar sessió gràficament hem d'afegir el greeter. Però per comandes ja podriem fer-ho sense afegir això.
+
+## 6.7 Prova d'inici de sesssió.
+
+<img width="474" height="82" alt="image" src="https://github.com/user-attachments/assets/10b28b36-2135-4ace-88d5-cdfcb4671088" />
+
+Intentem iniciar sessió per terminal
+
+<img width="474" height="231" alt="image" src="https://github.com/user-attachments/assets/77991fcf-1aee-4c1b-b01d-4febe26cb658" />
+
+<img width="474" height="231" alt="image" src="https://github.com/user-attachments/assets/d617d0a2-406b-42e0-8dae-878af2bff54a" />
+
+Iniciem gràficament.
