@@ -1,4 +1,4 @@
-<img width="964" height="753" alt="image" src="https://github.com/user-attachments/assets/c5143a63-c376-4f7a-96d9-3b882cb3d443" />---
+/>---
 layout: default
 title: "SPRINT 3: ADMINISTRACIÓ DE DOMINIS I SEGURETAT"
 ---
