@@ -1,4 +1,4 @@
----
+<img width="964" height="753" alt="image" src="https://github.com/user-attachments/assets/c5143a63-c376-4f7a-96d9-3b882cb3d443" />---
 layout: default
 title: "SPRINT 3: ADMINISTRACIÓ DE DOMINIS I SEGURETAT"
 ---
@@ -185,9 +185,9 @@ Donem permissos
 
 <img width="934" height="54" alt="image" src="https://github.com/user-attachments/assets/9b84af3e-25d6-4b87-ac3e-43478af8ac02" />
 
-<img width="800" height="388" alt="image" src="https://github.com/user-attachments/assets/405e356c-4f64-443e-a920-be7e5a097f39" />
+<img width="906" height="381" alt="image" src="https://github.com/user-attachments/assets/b4c6e328-2b7d-406f-b8d5-81f408d25b72" />
 
-Comprovem la ubicació de Java i descomentem aquestes dues linies de l'arxiu ini. Ens hem de fixar en la versió de java que tenim instal·lada.
+Comprovem la ubicació de Java, descomentem aquestes dues linies de l'arxiu ini i editem segons la ubicació. Ens hem de fixar en la versió de java que tenim instal·lada.
 
 <img width="700" height="36" alt="image" src="https://github.com/user-attachments/assets/0542f903-9b2a-407f-be77-2d7aad7bcc6a" />
 
@@ -196,5 +196,66 @@ Anem a la carpeta /usr/share/applications i creem un archiu apachedirectorystudi
 <img width="727" height="39" alt="image" src="https://github.com/user-attachments/assets/b82d5b98-fd9c-48e6-9f16-848241fbd489" />
 
 Otorguem permissos d'escriptura al arxiu i el editem.
+
+<img width="906" height="186" alt="image" src="https://github.com/user-attachments/assets/9e7dd839-1b89-4dea-bccc-2d4e5f2fc4df" />
+
+Afegim la informació de la aplicació. Desem i surtim.
+
+<img width="383" height="39" alt="image" src="https://github.com/user-attachments/assets/126a62b2-4d9d-416b-9cd8-8e585699ebce" />
+
+Executem aquesta comanda per tornar al mode desktop o premem Ctrl + Alt + F1.
+
+<img width="1098" height="573" alt="image" src="https://github.com/user-attachments/assets/4a8cc620-1fcb-4fb4-aa7c-8e296e5241ed" />
+
+<img width="964" height="753" alt="image" src="https://github.com/user-attachments/assets/0b885232-b8dd-4b75-883a-9fbbb999166b" />
+
+Anem al calaix d'aplicacions i trobarem la drecera. Iniciem el programa
+
+<img width="495" height="367" alt="image" src="https://github.com/user-attachments/assets/b02844b1-8df8-47fb-a490-be64c6ef9ad0" />
+
+Anem al desplegable de LDAP i creem una nova connexió.
+
+<img width="587" height="275" alt="image" src="https://github.com/user-attachments/assets/50bd734c-18b7-41ba-b23d-218b7664482a" />
+
+Afegim la IP del server i un nom distintiu.
+
+<img width="468" height="62" alt="image" src="https://github.com/user-attachments/assets/4091e406-a5dd-46a9-bd3f-5a8936d1b0e1" />
+
+Busquem l'usuari administrador del domini.
+
+<img width="597" height="175" alt="image" src="https://github.com/user-attachments/assets/c50642da-c59d-4189-952b-67379e30b0d2" />
+
+<img width="651" height="218" alt="image" src="https://github.com/user-attachments/assets/f47a20fe-1fa3-41fa-97fb-563e5502cd6f" />
+
+Afegim l'usuari amb el domini i comprovem la autenticació.
+
+<img width="913" height="506" alt="image" src="https://github.com/user-attachments/assets/76818219-7cc4-40bb-8c73-4351bf3968f2" />
+
+Un cop establerta la connexió veurem el panell del nostre servidor LDAP.
+
+<img width="715" height="285" alt="image" src="https://github.com/user-attachments/assets/f2e7a953-2e12-4a0a-889b-eb5c9a5a94a1" />
+
+Per crear una UO fem click esquerre sobre dc=gina dc=cat i creem una nova entrada.
+
+<img width="608" height="202" alt="image" src="https://github.com/user-attachments/assets/1ff06e62-05d5-4bc4-843b-9fc3ee386fcf" />
+
+La creem de zero.
+
+<img width="606" height="377" alt="image" src="https://github.com/user-attachments/assets/929cf302-cf23-42b0-b1b1-b89071ce47ce" />
+
+Busquem "organizationalUnit" i l'afegim.
+
+<img width="605" height="250" alt="image" src="https://github.com/user-attachments/assets/a4a958c5-b39b-40aa-9230-5fc94a81af9c" />
+
+En el desplegable busquem "ou" i creem la unitat "classe".
+
+<img width="220" height="176" alt="image" src="https://github.com/user-attachments/assets/aaed4777-2b74-45ce-8cc9-2383ded64cab" />
+
+Ara ja ens apareixerà la unitat organitzativa.
+
+<img width="800" height="194" alt="image" src="https://github.com/user-attachments/assets/eda56bbd-a28c-473c-9a5c-3a30a159af15" />
+
+Per crear un usuari dins de la UO seguim els mateixos passos però des de la nova UO.
+
 
 
