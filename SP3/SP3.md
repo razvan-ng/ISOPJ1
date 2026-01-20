@@ -164,3 +164,37 @@ Intentem iniciar sessió per terminal
 <img width="474" height="231" alt="image" src="https://github.com/user-attachments/assets/d617d0a2-406b-42e0-8dae-878af2bff54a" />
 
 Iniciem gràficament.
+
+# Part 7: Instal·lació de Apache Directory Studio
+
+<img width="630" height="78" alt="image" src="https://github.com/user-attachments/assets/2ea2e84e-5dce-49e2-854b-ef97cf42f258" />
+
+Instal·lem JAVA. Després comprovem que s'ha instal·lat correctament amb java -version.
+
+<img width="761" height="210" alt="image" src="https://github.com/user-attachments/assets/d9104878-b9da-46d2-85f2-34980bb9da7a" />
+
+Descarreguem el paquet tar.gz de la pàgina oficial. El descomprimim.
+
+<img width="872" height="116" alt="image" src="https://github.com/user-attachments/assets/0ca25964-0601-4840-b988-17ca2d95619c" />
+
+Copiem el descomprimit a la ruta /opt.
+
+<img width="924" height="35" alt="image" src="https://github.com/user-attachments/assets/d34998fd-2da1-46b2-8243-7a8fdaf6aa09" />
+
+Donem permissos 
+
+<img width="934" height="54" alt="image" src="https://github.com/user-attachments/assets/9b84af3e-25d6-4b87-ac3e-43478af8ac02" />
+
+<img width="800" height="388" alt="image" src="https://github.com/user-attachments/assets/405e356c-4f64-443e-a920-be7e5a097f39" />
+
+Comprovem la ubicació de Java i descomentem aquestes dues linies de l'arxiu ini. Ens hem de fixar en la versió de java que tenim instal·lada.
+
+<img width="700" height="36" alt="image" src="https://github.com/user-attachments/assets/0542f903-9b2a-407f-be77-2d7aad7bcc6a" />
+
+Anem a la carpeta /usr/share/applications i creem un archiu apachedirectorystudio.desktop per tenir un accés directe a la interficie gràfica.
+
+<img width="727" height="39" alt="image" src="https://github.com/user-attachments/assets/b82d5b98-fd9c-48e6-9f16-848241fbd489" />
+
+Otorguem permissos d'escriptura al arxiu i el editem.
+
+
