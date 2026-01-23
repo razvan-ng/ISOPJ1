@@ -167,6 +167,8 @@ Iniciem gràficament.
 
 # Part 7: Instal·lació de Apache Directory Studio
 
+## 7.1 Instal·lació, configuració i creació d'usuari en ADS.
+
 <img width="630" height="78" alt="image" src="https://github.com/user-attachments/assets/2ea2e84e-5dce-49e2-854b-ef97cf42f258" />
 
 Instal·lem JAVA. Després comprovem que s'ha instal·lat correctament amb java -version.
@@ -257,5 +259,38 @@ Ara ja ens apareixerà la unitat organitzativa.
 
 Per crear un usuari dins de la UO seguim els mateixos passos però des de la nova UO.
 
+<img width="604" height="181" alt="image" src="https://github.com/user-attachments/assets/33867a1f-d1b2-4fc5-b364-03ee4b79551e" />
 
+Sel·lecionem el tipus inetOrgPerson.
 
+<img width="611" height="216" alt="image" src="https://github.com/user-attachments/assets/a6ca2309-4552-4f0e-945e-f2f25d7610b4" />
+
+A RDN sel·lecionem "UID" i creem el nom d'usuari.
+
+<img width="508" height="403" alt="image" src="https://github.com/user-attachments/assets/2dd77004-4cc6-4150-949e-3e61f779b7c7" />
+
+Un cop configurem els paràmetres del usuari podem configurar una contrasenya. Fem click esquerrre i fem "New Attribute".
+
+<img width="533" height="272" alt="image" src="https://github.com/user-attachments/assets/cd6fb81f-10c6-4954-b86e-09cc64fd67ef" />
+
+Busquem "userPassword" i fem click sobre Next.
+
+<img width="760" height="458" alt="image" src="https://github.com/user-attachments/assets/8dfcfcc1-6949-4e15-94b7-eeed1d7fdf33" />
+
+Configurem la contrasenya, i per més seguretat, sel·lecionem el mètode de hash a CRYPT-SHA-512 per no guardar el text en pla.
+
+<img width="602" height="373" alt="image" src="https://github.com/user-attachments/assets/575cb101-d6cd-4acb-b46d-a9ea81c635ab" />
+
+Ara ja tenim l'usuari configurat. Ja podem acabar.
+
+<img width="675" height="343" alt="image" src="https://github.com/user-attachments/assets/885c5ea2-a011-46bc-ade2-31817cb68bfc" />
+
+Podem comprovar que ja apareix l'usuari.
+
+## 7.2 Comprovació en entorn client.
+
+<img width="433" height="169" alt="image" src="https://github.com/user-attachments/assets/901613d0-6d17-4b82-8bd1-00f36f11e1ec" />
+
+<img width="378" height="525" alt="image" src="https://github.com/user-attachments/assets/7c7bc1dd-454f-4ce4-b1a9-7c4795b5ea87" />
+
+Fem click sobre "Not listed?" i escrivim l'usuari que hem creat.
