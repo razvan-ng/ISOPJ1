@@ -291,6 +291,10 @@ Podem comprovar que ja apareix l'usuari.
 
 <img width="433" height="169" alt="image" src="https://github.com/user-attachments/assets/901613d0-6d17-4b82-8bd1-00f36f11e1ec" />
 
-<img width="378" height="525" alt="image" src="https://github.com/user-attachments/assets/7c7bc1dd-454f-4ce4-b1a9-7c4795b5ea87" />
+<img width="361" height="244" alt="image" src="https://github.com/user-attachments/assets/27c7b251-2c51-43a9-9e54-5c1612c89338" />
 
-Fem click sobre "Not listed?" i escrivim l'usuari que hem creat.
+Fem click sobre "Not listed?", escrivim l'usuari i la contrasenya que hem creat.
+
+<img width="312" height="55" alt="image" src="https://github.com/user-attachments/assets/1adaffae-7bf7-43cc-a85f-080a9f48f965" />
+
+Anem al terminal i executem whoami per veure l'usuari actual.
