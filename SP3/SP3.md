@@ -334,7 +334,7 @@ Un punt clau és que **Samba és compatible amb Windows i Linux**:
 
 ## 8.2 Autenticació a través d'LDAP.
 
-## 8.3 Creació del server SAMBA .
+## 8.3 Creació del server SAMBA. Configuració d'usuaris dins del server.
 
 <img width="654" height="191" alt="image" src="https://github.com/user-attachments/assets/dcbfdc40-5547-45bb-b491-bb20778c9c00" />
 
@@ -371,3 +371,11 @@ A l'arxiu smb.conf (/etc/samba/smb.conf) configurem el recurs compartit. Aqui po
 <img width="390" height="32" alt="image" src="https://github.com/user-attachments/assets/bc8fd5b6-4352-4860-8571-8e35832321fa" />
 
 Sempre que modifiquem l'arxiu hem de reiniciar el servei.
+
+## 8.4 Accés al servidor samba des de l'entorn client.
+
+<img width="674" height="166" alt="image" src="https://github.com/user-attachments/assets/eeddf414-2886-4405-99ae-838e950cbb96" />
+
+Instal·lem el paquet smbclient amb sudo apt install smbclient.
+
+
