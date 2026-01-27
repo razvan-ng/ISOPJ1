@@ -298,3 +298,76 @@ Fem click sobre "Not listed?", escrivim l'usuari i la contrasenya que hem creat.
 <img width="312" height="55" alt="image" src="https://github.com/user-attachments/assets/1adaffae-7bf7-43cc-a85f-080a9f48f965" />
 
 Anem al terminal i executem whoami per veure l'usuari actual.
+
+# Part 8: Configuració de SAMBA.
+
+## 8.1 Què és un servidor Samba?
+
+Un **servidor Samba** és un servei que permet **compartir recursos dins d’una xarxa**, especialment:
+
+- **Fitxers**
+- **Carpetes**
+- **Impressores**
+
+L’objectiu és que diferents ordinadors de la mateixa xarxa puguin accedir a aquests recursos com si fossin comparticions de xarxa normals (per exemple, una carpeta comuna).
+
+### Diferència entre Samba i NFS
+
+La diferència principal és **com es controla l’accés**:
+
+#### Samba
+- L’autenticació es fa per **usuaris**.
+- Es pot fer amb:
+  - **usuaris locals** (usuari/contrasenya al servidor)
+  - o amb un sistema centralitzat com **LDAP** (gestió d’usuaris a la xarxa)
+
+#### NFS
+- L’accés es controla principalment per **IP** (o rang d’IPs).
+- És a dir, depèn més de **des d’on et connectes** que no pas de **quin usuari ets**.
+
+### Compatibilitat
+
+Un punt clau és que **Samba és compatible amb Windows i Linux**:
+
+- A **Windows** es veu com una carpeta compartida típica.
+- A **Linux** també es pot muntar i utilitzar sense problemes.
+
+## 8.2 Autenticació a través d'LDAP.
+
+## 8.3 Creació del server SAMBA .
+
+<img width="654" height="191" alt="image" src="https://github.com/user-attachments/assets/dcbfdc40-5547-45bb-b491-bb20778c9c00" />
+
+Instal·lem el paquet samba amb _sudo apt install samba_.
+
+<img width="453" height="214" alt="image" src="https://github.com/user-attachments/assets/85132575-cc9d-4730-bda9-a35d8cab8109" />
+
+Creem la carpeta proves i donem permis 777. Creem un arxiu hola i comprovem els permissos read write.
+
+<img width="424" height="63" alt="image" src="https://github.com/user-attachments/assets/23057037-0a99-4ec6-8e0b-cb5575f5142e" />
+
+Creem els usuaris blau, roig i groc. Els configurem de forma que no puguin accedir amb una sessió i només funcionin per a samba.
+
+<img width="305" height="70" alt="image" src="https://github.com/user-attachments/assets/05ccc08c-c231-4e29-95f2-263721c6dda6" />
+
+Creem el grup color
+
+<img width="329" height="155" alt="image" src="https://github.com/user-attachments/assets/a3e27242-b413-4e80-bec0-5b483204b7a1" />
+
+Afegim els usuaris al grup que hem creat abans.
+
+<img width="746" height="297" alt="image" src="https://github.com/user-attachments/assets/a649fd4a-d554-44aa-9738-7ac5172c5eb7" />
+
+Comprovem que s'han creat els usuaris i estan dins del grup color.
+
+<img width="321" height="206" alt="image" src="https://github.com/user-attachments/assets/31320d11-0cf4-47f3-9664-383532500d55" />
+
+Configurem contrasenyes per als usuaris samba.
+
+<img width="211" height="161" alt="image" src="https://github.com/user-attachments/assets/122cded4-d35c-4043-85ef-5082c35a83f2" />
+
+A l'arxiu smb.conf (/etc/samba/smb.conf) configurem el recurs compartit. Aqui podem tots els recursos compartits. Afegim la configuració al final del arxiu.
+
+<img width="390" height="32" alt="image" src="https://github.com/user-attachments/assets/bc8fd5b6-4352-4860-8571-8e35832321fa" />
+
+Sempre que modifiquem l'arxiu hem de reiniciar el servei.
