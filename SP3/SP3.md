@@ -299,8 +299,184 @@ Fem click sobre "Not listed?", escrivim l'usuari i la contrasenya que hem creat.
 
 Anem al terminal i executem whoami per veure l'usuari actual.
 
-# Part 8: Configuració de SAMBA.
+# Part 8: Activitat.
 
+## - Fes un dpkg-reconfigure slapd al servidor per tal de deixar la base de dades buida i només amb el domini i l’usuari admin creat. Comprova-ho amb un slapcat. ##
+
+<img width="819" height="270" alt="image" src="https://github.com/user-attachments/assets/a07698d9-2479-42f0-8edf-cb36a9cc3f8e" />
+
+Diem que no volem ometre la configuració del server OpenLDAP.
+
+<img width="1263" height="270" alt="image" src="https://github.com/user-attachments/assets/8522b160-ed0e-40f8-b2db-144998ef36c9" />
+
+Configurem el domini gina.cat.
+
+<img width="1263" height="270" alt="image" src="https://github.com/user-attachments/assets/23f3e540-54d9-4fba-8acc-1eb1e4d9fa28" />
+
+El nom de la organització.
+
+<img width="1263" height="270" alt="image" src="https://github.com/user-attachments/assets/1afefd52-70f8-4efb-b6a8-2755d3a15fff" />
+
+Contrasenya d'admin,
+
+<img width="1263" height="270" alt="image" src="https://github.com/user-attachments/assets/e1394f62-7330-48d9-8938-01a423d90c97" />
+
+Li diem que volem que la base de dades s'elimini,
+
+<img width="1263" height="270" alt="image" src="https://github.com/user-attachments/assets/48d08e34-0305-40c3-a26e-c8499742ac5a" />
+
+Movem els fitxers de la base de dades anterior per no causar discrepàncies amb la BD nova.
+
+<img width="757" height="137" alt="image" src="https://github.com/user-attachments/assets/7132f6dd-57b0-4985-a1f1-721f73e0a294" />
+
+Esperem que acabi.
+
+<img width="442" height="232" alt="image" src="https://github.com/user-attachments/assets/24685bbf-6162-4d17-aff2-f21c56beb03b" />
+
+Ja no tenim cap usuari o grups dels que teniem abans creats. 
+
+## -  Descarrega l'arxiu dades_pt10.ldif del moodle i amb la comanda ldapadd carrega els usuaris, grups i uos (Compte que el domini és vesper.cat, hauràs de modificar-lo pel teu). ##
+
+<img width="832" height="753" alt="image" src="https://github.com/user-attachments/assets/e81d91fe-43a3-482d-bffd-e5822d104ab3" />
+
+El domini del meu server és gina.cat, per tant, he de canviar vesper a dc=vesper per dc=gina.
+
+<img width="862" height="280" alt="image" src="https://github.com/user-attachments/assets/788d67fd-fc19-4661-85e7-28e64b8a3ea8" />
+
+Un cop hem guardat d'arxiu executem ldapadd -x -D "cn=admin,dc=gina,dc=cat" -W -f dades_V2.ldif per executar l'arxiu.
+
+## - Fes un altre slapcat per tal de comprovar que les dades s'han carregat correctament.## 
+
+<img width="767" height="807" alt="image" src="https://github.com/user-attachments/assets/18c8af42-9c31-4850-925c-9b9480687053" />
+
+## 1. Crea un nou usuari directament al domini.##
+
+<img width="749" height="256" alt="image" src="https://github.com/user-attachments/assets/80919e6e-d187-45c2-8f17-0d730ddd211a" />
+
+Creem un arxiu ldif i definim els paràmetres per a l'usuari joan.
+
+<img width="729" height="84" alt="image" src="https://github.com/user-attachments/assets/311c8268-87fd-4690-b683-80d67731ff78" />
+
+Apliquem l'arxiu que acabem de crear.
+
+<img width="729" height="104" alt="image" src="https://github.com/user-attachments/assets/3773bd93-53e7-4e99-8fc1-df2fb04d769c" />
+
+Comprovem amb slapcat. Podem veure que ja tenim l'usuari joan i la seva carpeta home.
+
+## 2. Crea una nova uo anomenada nòmines.##
+
+<img width="729" height="104" alt="image" src="https://github.com/user-attachments/assets/3a9034e5-6c08-4e28-9244-5322ed5aac90" />
+
+Creem l'arxiu uo_nomines.ldif amb els paràmetres de la nova UO.
+
+<img width="729" height="104" alt="image" src="https://github.com/user-attachments/assets/a512e05f-0cbb-41d6-bfa8-d455c95ad812" />
+
+Apliquem l'arxiu amb ldapadd.
+
+## 3. Mou l’usuari que has creat dintre de la uo nòmines.##
+
+<img width="1287" height="80" alt="image" src="https://github.com/user-attachments/assets/8823de63-493f-431e-80ed-04f8aed289e8" />
+
+Amb la comanda ldapmodrdn movem l'usuari joan dins de nòmines. L'últim argument "cn=joan" indica que mantenim el mateix nom relatiu.
+
+<img width="411" height="353" alt="image" src="https://github.com/user-attachments/assets/34b0adc0-dc08-403c-af62-1748ca74c2dd" />
+
+Comprovem amb slapcat.
+
+## 4. Quants grups hi ha al domini gina.cat?##
+
+<img width="912" height="376" alt="image" src="https://github.com/user-attachments/assets/97cae3d8-654b-4863-a618-bd88d8aea3b0" />
+
+Segons la comanda ldapsearch tenim 2; informatica i administracio.
+
+## 5. Afegeix l’usuari que has creat dintre d’un dels grups del domini.##
+
+<img width="850" height="116" alt="image" src="https://github.com/user-attachments/assets/bf698a0e-613b-4d7c-b08a-08209d99306a" />
+
+Creem un arxiu indicant que volem modificar el grup de l'usuari joan i l'afegim al grup d'informàtica.
+
+<img width="985" height="90" alt="image" src="https://github.com/user-attachments/assets/e4473348-0f61-439c-8cac-97aa6d45276c" />
+
+L'executem.
+
+## 6. D’un sol cop: Afegeix un nou atribut opcional a l’usuari sergi, modifica el cognom de l’usuari sergi al valor Pallarés. ##
+
+<img width="744" height="139" alt="image" src="https://github.com/user-attachments/assets/163224e9-cc40-4870-8c7e-52e716b49a25" />
+
+Hem d'afegir un atribut opcional (per exemple description) i canviar el cognom (sn) a "Pallarés". Creem l'arxiu ldif.
+
+<img width="962" height="107" alt="image" src="https://github.com/user-attachments/assets/976ae48b-0028-490a-be01-c30075c2fbda" />
+
+L'apliquem.
+
+## 7. Quants usuaris hi ha dintre de la uo rrhh? Quins són?##
+
+<img width="1020" height="476" alt="image" src="https://github.com/user-attachments/assets/f61276b7-8399-4f8d-9a71-b8987564bcec" />
+
+Amb la comanda ldapsearch li diem que ens mostri tots els usuaris (cn) a la uo rrhh. Tenim 3; xavier, enric i sergi.
+
+## 8. Esborra el gidNumber del grup informàtica.##
+
+<img width="770" height="81" alt="image" src="https://github.com/user-attachments/assets/e1b24617-649b-4374-9bc0-0404987a670d" />
+
+Creem aquest arxiu ldif indicant que volem esborrar el gidNumber del grup informatica.
+
+<img width="770" height="117" alt="image" src="https://github.com/user-attachments/assets/4304bc98-f3ae-4331-8099-eeefed0114c9" />
+
+No ens haurà funcionat perquè l'objectClass posixGroup obliga a tenir un gidNumber.
+
+## 9. Quantes uos hi ha al domini gina.cat? ##
+
+<img width="973" height="406" alt="image" src="https://github.com/user-attachments/assets/b36f577c-3115-4f59-aa02-e80697e825a0" />
+
+Amb la comanda ldapsearch i indicant-li objectClass=organizationalUnit veurem totes les UOs de gina.cat. Tenim 3; rrhh, departaments i nomines.
+
+## 10. Modifica el cn de Xavier per Francesc Xavier.##
+
+<img width="1262" height="114" alt="image" src="https://github.com/user-attachments/assets/3214bdac-8aed-40d2-86d5-07b1a49b1e47" />
+
+Això és un canvi de RDN (Relative Distinguished Name). Amb ldapmodrdn ho podrem fer. Un cop executada la comanda, comprovem amb slapcat.
+
+## 11. Esborra la uo nòmines.##
+
+LDAP no permet esborrar una UO si no està buida. Primer hem d'esborrar (o moure) l'usuari joan que hi ha dins.
+
+<img width="1212" height="39" alt="image" src="https://github.com/user-attachments/assets/910ccf27-6133-4ec5-9b79-80475313f0fa" />
+
+Esborrem l'usuari joan.
+
+<img width="610" height="40" alt="image" src="https://github.com/user-attachments/assets/f39afd51-468c-4b46-a547-f7fe122d8167" />
+
+Comprovem que s'ha esborrat correctament. Com que no ens ha retornat cap informació, ja s'ha esborrat.
+
+<img width="1011" height="76" alt="image" src="https://github.com/user-attachments/assets/206a9402-a3eb-4183-8c67-d31a1b31511a" />
+
+Esborrem la uo nòmines i comprovem que efectivament, s'ha esborrat.
+
+## 12. Mostra els usuaris que tinguin com a grup principal el grup administració.##
+
+<img width="1070" height="516" alt="image" src="https://github.com/user-attachments/assets/d1a7f231-7daa-4e24-b241-4ba6b362b484" />
+
+El grup Administració té el GID 1002. Cerquem usuaris amb aquest gidNumber. L'usuari que busquem és sergi.
+
+## 13. Quin usuari té el uidNumber 1003?##
+
+<img width="845" height="246" alt="image" src="https://github.com/user-attachments/assets/3f620532-b381-4be2-849d-f09828fb9442" />
+
+Cap usuari. Al fitxer original els UIDs salten del 1002 (Enric) al 1004 (Sergi).
+
+## 14. Mostra quins són els usuaris on el seu cognom comenci per R i el seu uidNumber sigui més gran que 1003.##
+
+<img width="931" height="255" alt="image" src="https://github.com/user-attachments/assets/f5145a68-ea75-4faa-bf2a-0e42cd48226f" />
+
+El filtre per "més gran que" (>) no és estàndard en filtres simples, es fa servir "més gran o igual" (>=). Si no haguéssim fet el pas 6 sortiria en Sergi (sn=Reus, uid=1004). En aquest cas no surt res.
+
+## 15. Mostra quins usuaris formen part del grup informàtica o aquells usuaris que tinguis de cognom Pallarés.##
+
+<img width="1019" height="560" alt="image" src="https://github.com/user-attachments/assets/5e96b40d-f329-4f3b-bdca-ebb1046bb79f" />
+
+El grup informàtica té GID 1001. Filtre: (GID=1001) OR (sn=Pallarés).
+Els usuaris buscats són: Francesc Xavier GID 1001, Enric GID 1001 i Sergi GID 1002 (amb cognom Pallarés).
 
 # Part 9: Configuració de SAMBA.
 
