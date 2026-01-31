@@ -557,6 +557,31 @@ Sempre que modifiquem l'arxiu hem de reiniciar el servei.
 
 Instal·lem el paquet smbclient amb sudo apt install smbclient.
 
+<img width="647" height="221" alt="image" src="https://github.com/user-attachments/assets/3b6bb016-beb2-4005-bc77-cdec9836dbfa" />
+
+Comprovem connectivitat amb el server. 
+
+<img width="892" height="553" alt="image" src="https://github.com/user-attachments/assets/c62337b3-cd24-4612-9b7b-bdbd2fec679e" />
+
+Entrem a l'explorador d'arxius i entrem l'adreça samba del nostre servidor.
+
+<img width="892" height="553" alt="image" src="https://github.com/user-attachments/assets/24d5ac5c-039b-4c9e-8dc4-d7af44cd98a6" />
+
+<img width="892" height="553" alt="image" src="https://github.com/user-attachments/assets/81ac9fd3-8df2-4f8a-8e2b-e3af45e1e442" />
+
+Primer entrem amb l'usuari anònim. Hem de veure que no podrem editar l'arxiu.
+
+<img width="892" height="553" alt="image" src="https://github.com/user-attachments/assets/538d3537-3fcc-4c1b-96a2-dfbfa5116b8e" />
+
+Amb l'usuari roig no podrem entrar. Si intentem fer-ho ens rebotarà a la mateixa pantalla,
+
+<img width="892" height="553" alt="image" src="https://github.com/user-attachments/assets/9421cee2-1eff-416c-bfdc-b61991af9410" />
+
+<img width="892" height="553" alt="image" src="https://github.com/user-attachments/assets/99a4a951-76d2-4bcb-a34c-3ce2979e279b" />
+
+Amb l'usuari blau podrem entrar i modificar l'arxiu.
+
+# Part 10: Configuració del servidor NFS.
 
 
 
