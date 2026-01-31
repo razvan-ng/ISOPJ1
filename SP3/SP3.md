@@ -301,7 +301,10 @@ Anem al terminal i executem whoami per veure l'usuari actual.
 
 # Part 8: Configuració de SAMBA.
 
-## 8.1 Què és un servidor Samba?
+
+# Part 9: Configuració de SAMBA.
+
+## 9.1 Què és un servidor Samba?
 
 Un **servidor Samba** és un servei que permet **compartir recursos dins d’una xarxa**, especialment:
 
@@ -332,9 +335,9 @@ Un punt clau és que **Samba és compatible amb Windows i Linux**:
 - A **Windows** es veu com una carpeta compartida típica.
 - A **Linux** també es pot muntar i utilitzar sense problemes.
 
-## 8.2 Autenticació a través d'LDAP.
+## 9.2 Autenticació a través d'LDAP.
 
-## 8.3 Creació del server SAMBA. Configuració d'usuaris dins del server.
+## 9.3 Creació del server SAMBA. Configuració d'usuaris dins del server.
 
 <img width="654" height="191" alt="image" src="https://github.com/user-attachments/assets/dcbfdc40-5547-45bb-b491-bb20778c9c00" />
 
@@ -377,5 +380,7 @@ Sempre que modifiquem l'arxiu hem de reiniciar el servei.
 <img width="674" height="166" alt="image" src="https://github.com/user-attachments/assets/eeddf414-2886-4405-99ae-838e950cbb96" />
 
 Instal·lem el paquet smbclient amb sudo apt install smbclient.
+
+
 
 
