@@ -345,11 +345,11 @@ El domini del meu server és gina.cat, per tant, he de canviar vesper a dc=vespe
 
 Un cop hem guardat d'arxiu executem ldapadd -x -D "cn=admin,dc=gina,dc=cat" -W -f dades_V2.ldif per executar l'arxiu.
 
-## - Fes un altre slapcat per tal de comprovar que les dades s'han carregat correctament.## 
+## - Fes un altre slapcat per tal de comprovar que les dades s'han carregat correctament. ## 
 
 <img width="767" height="807" alt="image" src="https://github.com/user-attachments/assets/18c8af42-9c31-4850-925c-9b9480687053" />
 
-## 1. Crea un nou usuari directament al domini.##
+## 1. Crea un nou usuari directament al domini. ##
 
 <img width="749" height="256" alt="image" src="https://github.com/user-attachments/assets/80919e6e-d187-45c2-8f17-0d730ddd211a" />
 
@@ -363,7 +363,7 @@ Apliquem l'arxiu que acabem de crear.
 
 Comprovem amb slapcat. Podem veure que ja tenim l'usuari joan i la seva carpeta home.
 
-## 2. Crea una nova uo anomenada nòmines.##
+## 2. Crea una nova uo anomenada nòmines. ##
 
 <img width="729" height="104" alt="image" src="https://github.com/user-attachments/assets/3a9034e5-6c08-4e28-9244-5322ed5aac90" />
 
@@ -373,7 +373,7 @@ Creem l'arxiu uo_nomines.ldif amb els paràmetres de la nova UO.
 
 Apliquem l'arxiu amb ldapadd.
 
-## 3. Mou l’usuari que has creat dintre de la uo nòmines.##
+## 3. Mou l’usuari que has creat dintre de la uo nòmines. ##
 
 <img width="1287" height="80" alt="image" src="https://github.com/user-attachments/assets/8823de63-493f-431e-80ed-04f8aed289e8" />
 
@@ -383,13 +383,13 @@ Amb la comanda ldapmodrdn movem l'usuari joan dins de nòmines. L'últim argumen
 
 Comprovem amb slapcat.
 
-## 4. Quants grups hi ha al domini gina.cat?##
+## 4. Quants grups hi ha al domini gina.cat? ##
 
 <img width="912" height="376" alt="image" src="https://github.com/user-attachments/assets/97cae3d8-654b-4863-a618-bd88d8aea3b0" />
 
 Segons la comanda ldapsearch tenim 2; informatica i administracio.
 
-## 5. Afegeix l’usuari que has creat dintre d’un dels grups del domini.##
+## 5. Afegeix l’usuari que has creat dintre d’un dels grups del domini. ##
 
 <img width="850" height="116" alt="image" src="https://github.com/user-attachments/assets/bf698a0e-613b-4d7c-b08a-08209d99306a" />
 
@@ -409,13 +409,13 @@ Hem d'afegir un atribut opcional (per exemple description) i canviar el cognom (
 
 L'apliquem.
 
-## 7. Quants usuaris hi ha dintre de la uo rrhh? Quins són?##
+## 7. Quants usuaris hi ha dintre de la uo rrhh? Quins són? ##
 
 <img width="1020" height="476" alt="image" src="https://github.com/user-attachments/assets/f61276b7-8399-4f8d-9a71-b8987564bcec" />
 
 Amb la comanda ldapsearch li diem que ens mostri tots els usuaris (cn) a la uo rrhh. Tenim 3; xavier, enric i sergi.
 
-## 8. Esborra el gidNumber del grup informàtica.##
+## 8. Esborra el gidNumber del grup informàtica. ##
 
 <img width="770" height="81" alt="image" src="https://github.com/user-attachments/assets/e1b24617-649b-4374-9bc0-0404987a670d" />
 
@@ -431,13 +431,13 @@ No ens haurà funcionat perquè l'objectClass posixGroup obliga a tenir un gidNu
 
 Amb la comanda ldapsearch i indicant-li objectClass=organizationalUnit veurem totes les UOs de gina.cat. Tenim 3; rrhh, departaments i nomines.
 
-## 10. Modifica el cn de Xavier per Francesc Xavier.##
+## 10. Modifica el cn de Xavier per Francesc Xavier. ##
 
 <img width="1262" height="114" alt="image" src="https://github.com/user-attachments/assets/3214bdac-8aed-40d2-86d5-07b1a49b1e47" />
 
 Això és un canvi de RDN (Relative Distinguished Name). Amb ldapmodrdn ho podrem fer. Un cop executada la comanda, comprovem amb slapcat.
 
-## 11. Esborra la uo nòmines.##
+## 11. Esborra la uo nòmines. ##
 
 LDAP no permet esborrar una UO si no està buida. Primer hem d'esborrar (o moure) l'usuari joan que hi ha dins.
 
@@ -453,25 +453,25 @@ Comprovem que s'ha esborrat correctament. Com que no ens ha retornat cap informa
 
 Esborrem la uo nòmines i comprovem que efectivament, s'ha esborrat.
 
-## 12. Mostra els usuaris que tinguin com a grup principal el grup administració.##
+## 12. Mostra els usuaris que tinguin com a grup principal el grup administració. ##
 
 <img width="1070" height="516" alt="image" src="https://github.com/user-attachments/assets/d1a7f231-7daa-4e24-b241-4ba6b362b484" />
 
 El grup Administració té el GID 1002. Cerquem usuaris amb aquest gidNumber. L'usuari que busquem és sergi.
 
-## 13. Quin usuari té el uidNumber 1003?##
+## 13. Quin usuari té el uidNumber 1003? ##
 
 <img width="845" height="246" alt="image" src="https://github.com/user-attachments/assets/3f620532-b381-4be2-849d-f09828fb9442" />
 
 Cap usuari. Al fitxer original els UIDs salten del 1002 (Enric) al 1004 (Sergi).
 
-## 14. Mostra quins són els usuaris on el seu cognom comenci per R i el seu uidNumber sigui més gran que 1003.##
+## 14. Mostra quins són els usuaris on el seu cognom comenci per R i el seu uidNumber sigui més gran que 1003. ##
 
 <img width="931" height="255" alt="image" src="https://github.com/user-attachments/assets/f5145a68-ea75-4faa-bf2a-0e42cd48226f" />
 
 El filtre per "més gran que" (>) no és estàndard en filtres simples, es fa servir "més gran o igual" (>=). Si no haguéssim fet el pas 6 sortiria en Sergi (sn=Reus, uid=1004). En aquest cas no surt res.
 
-## 15. Mostra quins usuaris formen part del grup informàtica o aquells usuaris que tinguis de cognom Pallarés.##
+## 15. Mostra quins usuaris formen part del grup informàtica o aquells usuaris que tinguis de cognom Pallarés. ##
 
 <img width="1019" height="560" alt="image" src="https://github.com/user-attachments/assets/5e96b40d-f329-4f3b-bdca-ebb1046bb79f" />
 
