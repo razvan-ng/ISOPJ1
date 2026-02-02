@@ -517,9 +517,13 @@ Un punt clau és que **Samba és compatible amb Windows i Linux**:
 
 Instal·lem el paquet samba si no el tenim instal·lat. Creem una carpeta la qual compartirem en el recurs compartit. 
 
-<img width="576" height="42" alt="image" src="https://github.com/user-attachments/assets/458d4795-2660-44c6-ae6d-447c4932d935" />
+<img width="613" height="65" alt="image" src="https://github.com/user-attachments/assets/164fa7c7-d329-405b-8cc2-02db537aed11" />
 
 Donem permisos de lectura-escriptura a la carpeta.
+
+<img width="861" height="57" alt="image" src="https://github.com/user-attachments/assets/8d6db24d-ab23-466f-aead-4653189d6756" />
+
+Generem un arxiu de prova amb text dins.
 
 <img width="374" height="763" alt="image" src="https://github.com/user-attachments/assets/4586f017-0b77-4461-805a-5ea02e050718" />
 
@@ -537,7 +541,7 @@ Registrem els usuaris a SAMBA. Encara que estiguin a LDAP, hem d'avisar a Samba 
 
 Configurem que el SAMBA vagi a comprovar els usuaris al server LDAP i no a /etc/passwd.
 
-<img width="320" height="153" alt="image" src="https://github.com/user-attachments/assets/ec472f75-a910-4007-9865-60da44c58961" />
+<img width="316" height="214" alt="image" src="https://github.com/user-attachments/assets/146688f6-863b-4063-99b0-82adb248661b" />
 
 Configurem el recurs compartit. Indiquem la ruta de la carpeta i, entre altres paràmetres, els usuaris que poden fer cada cosa (escriure, llegir, accedir o directament no poden entrar).
 
@@ -561,12 +565,61 @@ Afegim l'esquema.
 
 Reiniciem els serveis slapd i smb. Tornem a activar els usuaris per a LDAP.
 
+<img width="628" height="79" alt="image" src="https://github.com/user-attachments/assets/b278c9e8-2544-4a40-bd9a-5fef596db06d" />
 
+Comprovem que l'usuari groc no pot entrar, tal com ho hem configurat en el apartat invalid users.
 
+<img width="798" height="23" alt="image" src="https://github.com/user-attachments/assets/a177c62a-c212-47e7-ae7f-585deb93fc2a" />
 
+<img width="798" height="200" alt="image" src="https://github.com/user-attachments/assets/fb80ecc5-af70-4e45-8232-1711fe0f1e6b" />
 
+Veiem que l'usuari blau pot entrar dins i crear carpetes.
 
+<img width="528" height="474" alt="image" src="https://github.com/user-attachments/assets/336d3c8c-1997-4349-bf76-fa62b422fbe8" />
 
+Entrem a l'explorador d'arxius i entrem com l'usuari blau.
+
+<img width="528" height="200" alt="image" src="https://github.com/user-attachments/assets/18890ca6-82bd-4064-b457-3f2331f75d8c" />
+
+Veurem les carpetes que veiem a través de la consola.
+
+<img width="528" height="404" alt="image" src="https://github.com/user-attachments/assets/d4715890-ad49-48f5-9383-1909bf631701" />
+
+Entrem dins de l'arxiu i tornem a posar la contrasenya de l'usuari blau.
+
+<img width="618" height="404" alt="image" src="https://github.com/user-attachments/assets/0f52e861-e191-44dd-8569-10d380e6357d" />
+
+Veiem que podem escriure i guardar.
+
+<img width="618" height="404" alt="image" src="https://github.com/user-attachments/assets/901049a7-047c-4367-832f-31a68f059246" />
+
+<img width="618" height="404" alt="image" src="https://github.com/user-attachments/assets/c7ba8419-f4f5-4f40-9188-59f415dbb368" />
+
+També podem borrar la carpeta que hem creat abans.
+
+<img width="708" height="196" alt="image" src="https://github.com/user-attachments/assets/3c099939-2ad5-439a-8017-5c7aae9e2e03" />
+
+Si entrem amb l'usuari roig veiem que podem accedir i navegar.
+
+<img width="566" height="70" alt="image" src="https://github.com/user-attachments/assets/91f3fbf7-5183-4b21-99b4-95df7d383db8" />
+
+No podrem crear carpetes ja que hem configurat que roig només pugui llegir.
+
+<img width="825" height="98" alt="image" src="https://github.com/user-attachments/assets/c2abab31-1197-4f39-8bac-ea3ff8025934" />
+
+Descarreguem l'arxiu al nostre ordinador.
+
+<img width="825" height="98" alt="image" src="https://github.com/user-attachments/assets/2008a6cc-c92f-4559-9319-f9742c65cdce" />
+
+Modifiquem l'arxiu i el guardem.
+
+<img width="656" height="76" alt="image" src="https://github.com/user-attachments/assets/af9a227c-f1d3-49d3-b916-03ca37af4a3c" />
+
+Intentem reescriure (editar) l'arxiu i comprovem que l'usuari roig no té permís per fer-ho.
+
+<img width="629" height="67" alt="image" src="https://github.com/user-attachments/assets/dc703aae-e8cf-4238-9c23-cd9ea2c1e809" />
+
+Si intentem esborrar l'arxiu no ens deixarà per la restricció que li hem aplicat.
 
 ## 9.3 Creació del server SAMBA. Configuració d'usuaris dins del server.
 
