@@ -569,11 +569,11 @@ Reiniciem els serveis slapd i smb. Tornem a activar els usuaris per a LDAP.
 
 Comprovem que l'usuari groc no pot entrar, tal com ho hem configurat en el apartat invalid users.
 
-<img width="798" height="200" alt="image" src="https://github.com/user-attachments/assets/fb80ecc5-af70-4e45-8232-1711fe0f1e6b" />
-
 <img width="798" height="23" alt="image" src="https://github.com/user-attachments/assets/a177c62a-c212-47e7-ae7f-585deb93fc2a" />
 
-Veiem que l'usuari blau pot entrar dins i crear carpetes.
+<img width="798" height="200" alt="image" src="https://github.com/user-attachments/assets/fb80ecc5-af70-4e45-8232-1711fe0f1e6b" />
+
+Veiem que l'usuari blau pot crear carpetes i navegar per dins del directori.
 
 <img width="528" height="474" alt="image" src="https://github.com/user-attachments/assets/336d3c8c-1997-4349-bf76-fa62b422fbe8" />
 
