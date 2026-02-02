@@ -511,7 +511,62 @@ Un punt clau és que **Samba és compatible amb Windows i Linux**:
 - A **Windows** es veu com una carpeta compartida típica.
 - A **Linux** també es pot muntar i utilitzar sense problemes.
 
-## 9.2 Autenticació a través d'LDAP.
+## 9.2 Creació del server SAMBA. Configuració d'usuaris a través d'LDAP.
+
+<img width="537" height="135" alt="image" src="https://github.com/user-attachments/assets/6f847378-b278-45df-bbdc-e562a3f20f3e" />
+
+Instal·lem el paquet samba si no el tenim instal·lat. Creem una carpeta la qual compartirem en el recurs compartit. 
+
+<img width="576" height="42" alt="image" src="https://github.com/user-attachments/assets/458d4795-2660-44c6-ae6d-447c4932d935" />
+
+Donem permisos de lectura-escriptura a la carpeta.
+
+<img width="374" height="763" alt="image" src="https://github.com/user-attachments/assets/4586f017-0b77-4461-805a-5ea02e050718" />
+
+Creem els usuaris que utilitzaran el servei compartit (roig, blau i groc).
+
+<img width="681" height="107" alt="image" src="https://github.com/user-attachments/assets/68fe85c4-c09c-440c-83aa-81d97af87848" />
+
+Executem l'arxiu i ja tindrem els usuaris creats. A mi em diu que ja existeixen, però si es fa de 0 no apareixerà aquest error.
+
+<img width="375" height="167" alt="image" src="https://github.com/user-attachments/assets/fe2976ee-e066-40e8-ae3b-7cba1c3382a8" />
+
+Registrem els usuaris a SAMBA. Encara que estiguin a LDAP, hem d'avisar a Samba que aquests usuaris tenen permís per entrar i assignar-los una contrasenya.
+
+<img width="626" height="201" alt="image" src="https://github.com/user-attachments/assets/bcde2702-0b9a-47f9-a9c4-3e417310f4ef" />
+
+Configurem que el SAMBA vagi a comprovar els usuaris al server LDAP i no a /etc/passwd.
+
+<img width="320" height="153" alt="image" src="https://github.com/user-attachments/assets/ec472f75-a910-4007-9865-60da44c58961" />
+
+Configurem el recurs compartit. Indiquem la ruta de la carpeta i, entre altres paràmetres, els usuaris que poden fer cada cosa (escriure, llegir, accedir o directament no poden entrar).
+
+<img width="579" height="95" alt="image" src="https://github.com/user-attachments/assets/e50b316f-5060-43b1-a1dc-f05f12a542ca" />
+
+Samba necessita saber la contrasenya del cn=admin per poder parlar amb l'LDAP.
+
+<img width="871" height="25" alt="image" src="https://github.com/user-attachments/assets/a628a8e2-6efd-4b00-b924-a38e8a456f51" />
+
+Comprovem si tenim l'esquema. En el meu cas no el tinc.
+
+<img width="871" height="84" alt="image" src="https://github.com/user-attachments/assets/e1ed44e5-39d1-4977-b56f-e86bff749ea7" />
+
+Anem a la ruta següent i busquem l'arxiu samba.ldif.
+
+<img width="881" height="114" alt="image" src="https://github.com/user-attachments/assets/db73e663-9290-4fd5-92a5-f7676139f604" />
+
+Afegim l'esquema.
+
+<img width="733" height="233" alt="image" src="https://github.com/user-attachments/assets/f6eab27e-ed1c-4a94-a70e-32f6c2bed820" />
+
+Reiniciem els serveis slapd i smb. Tornem a activar els usuaris per a LDAP.
+
+
+
+
+
+
+
 
 ## 9.3 Creació del server SAMBA. Configuració d'usuaris dins del server.
 
