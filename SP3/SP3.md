@@ -691,5 +691,23 @@ Amb l'usuari blau podrem entrar i modificar l'arxiu.
 
 # Part 10: Configuració del servidor NFS.
 
+## 10.1 Què és un servidor NFS?
+
+## Teoria NFS (Network File System)
+
+- **NFS** és un protocol per **compartir fitxers i directoris** a través de la xarxa (sobretot en **LAN**).
+- Permet que un client **munti** un directori remot com si fos una carpeta local.
+
+### Què comparteix
+- **Directoris i fitxers**
+- **No** està pensat per compartir **impressores** (a diferència de Samba)
+
+### Autenticació i control d’accés
+- L’accés es controla principalment **a nivell de host** (IP/xarxa autoritzada), no d’usuari.
+- Els permisos s’apliquen segons permisos **Linux/Unix** (propietari, grup, **UID/GID**).
+
+### Compatibilitat
+- Pot ser utilitzat per **clients Linux** i **Windows** (segons configuració/servei habilitat).
+
 
 
