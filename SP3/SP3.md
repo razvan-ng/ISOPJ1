@@ -709,5 +709,11 @@ Amb l'usuari blau podrem entrar i modificar l'arxiu.
 ### Compatibilitat
 - Pot ser utilitzat per **clients Linux** i **Windows** (segons configuració/servei habilitat).
 
+## 10.2 NFS sense LDAP
+
+<img width="672" height="243" alt="image" src="https://github.com/user-attachments/assets/0e6c9a55-45ff-4e5f-8190-912c3ce2e032" />
+
+Instal·lem el paquet nfs-kernel-server
+
 
 
