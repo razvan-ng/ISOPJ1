@@ -711,9 +711,72 @@ Amb l'usuari blau podrem entrar i modificar l'arxiu.
 
 ## 10.2 NFS sense LDAP
 
+### Linux ###
+
 <img width="672" height="243" alt="image" src="https://github.com/user-attachments/assets/0e6c9a55-45ff-4e5f-8190-912c3ce2e032" />
 
 Instal·lem el paquet nfs-kernel-server
 
+<img width="569" height="56" alt="image" src="https://github.com/user-attachments/assets/d23c8fd3-d847-49bc-847f-becfcd4631a0" />
+<img width="569" height="56" alt="image" src="https://github.com/user-attachments/assets/bfe524da-8584-41a0-a62d-d25b3a6df0ae" />
 
+Creem una carpeta de prova i donem permissos 777. Després otorguem la propietat a ningú.
+
+<img width="569" height="56" alt="image" src="https://github.com/user-attachments/assets/f21c2c4d-16df-4e8a-b3c4-1e80d5b5ded1" />
+
+Configurem l'arxiu de configuració per NFS. És l'equivalent al smb.conf.
+
+<img width="892" height="243" alt="image" src="https://github.com/user-attachments/assets/9761c0e4-5f6e-421d-a302-529cfb6459fb" />
+
+Afegim a l'última fila la ruta de la carpeta compartida. *= tots poden accedir,  si podem IP només poden accedir les IP que sellecionem. Es la base on es decideix a qui se li comparteix o no. rw = read write, sync=sincronitzar, no_subtree_check=que no el puguem trobar i haguem d’entrar manualment.
+
+<img width="766" height="217" alt="image" src="https://github.com/user-attachments/assets/0e6dfb11-49e6-49ab-b7fc-7b7540e6a985" />
+
+Cada vegada que fem canvis hem de reiniciar el servei. Comprovem que s'ha iniciat correctament.
+
+<img width="525" height="54" alt="image" src="https://github.com/user-attachments/assets/136211b8-cfa5-4915-96d1-f7a4c5498fd8" />
+
+Un cop reiniciat creem un arxiu de prova dins de la carpeta.
+
+<img width="641" height="254" alt="image" src="https://github.com/user-attachments/assets/c8b89da5-a7a1-4eee-88a7-6a9cd51eac54" />
+
+Al client, instal·lem els paquets nfs-common i rpcbind.
+
+<img width="613" height="42" alt="image" src="https://github.com/user-attachments/assets/ab3c4570-6a3f-4fc8-a276-603c18c70505" />
+<img width="613" height="42" alt="image" src="https://github.com/user-attachments/assets/384dbc3e-45be-4a4a-9220-29ef4e74d19f" />
+
+Creem una carpeta on es muntarà la ruta del NFS.
+
+<img width="906" height="214" alt="image" src="https://github.com/user-attachments/assets/73b6835a-840f-4d48-beb5-9a4191c31224" />
+
+Editem l'arxiu fstab i afegim la ruta del server perquè es munte la ruta cada vegada que iniciem el sistema.
+
+<img width="390" height="95" alt="image" src="https://github.com/user-attachments/assets/23847b7b-2588-4f86-be19-3ea45c8d2823" />
+
+Un cop hem reiniciat l'ordinador, si entrem a la carpeta que hem creat veurem l'arxiu.
+
+### Windows ###
+
+## 10.3 NFS amb LDAP
+
+<img width="404" height="54" alt="image" src="https://github.com/user-attachments/assets/3a024790-4759-4f87-908c-6d2042d5cc12" />
+<img width="404" height="54" alt="image" src="https://github.com/user-attachments/assets/449ede1e-2041-4fd1-8554-2d1a420f3a51" />
+
+Creem una carpeta on s'allotjaran les homes de tots els usuaris. Si aquests no tenen permís al seu home, no podrian accedir.
+
+<img width="679" height="216" alt="image" src="https://github.com/user-attachments/assets/a298b6c8-bde5-44ad-bbfe-6594f3e0240f" />
+
+Afegim la ruta de les homes al /etc/exports
+
+<img width="758" height="216" alt="image" src="https://github.com/user-attachments/assets/0b25316e-612c-46c3-bb4d-b1a00aea61cd" />
+
+Reiniciem el servei.
+
+<img width="485" height="85" alt="image" src="https://github.com/user-attachments/assets/9d274aa6-0b90-4fcb-91f1-96c6bb471bab" />
+
+Al client, creem les carpetes per a les homes i editem l'arxiu fstab.
+
+<img width="867" height="253" alt="image" src="https://github.com/user-attachments/assets/aedfe275-b52e-4609-87e2-368ee032f5c8" />
+
+Afegim la ruta del server perquè es munti automàticament cada vegada que iniciem el ordinador.
 
