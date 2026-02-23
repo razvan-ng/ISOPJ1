@@ -757,6 +757,26 @@ Un cop hem reiniciat l'ordinador, si entrem a la carpeta que hem creat veurem l'
 
 ### Windows ###
 
+<img width="413" height="292" alt="image" src="https://github.com/user-attachments/assets/a70d6b97-27b1-4aa3-92d3-46dd33f81870" />
+
+Entrem al Tauler de Control > Programes > Activar i desactivar funcionalitats de Windows. Després activem els serveis d'NFS.
+
+<img width="507" height="101" alt="image" src="https://github.com/user-attachments/assets/81679a17-7f20-4118-9a1b-600e00827db0" />
+
+Executem la comanda mount -o anon \\(IP SERVER)\(CARPETA SERVER) Z: per montar la ruta a la lletra Z.
+
+<img width="623" height="211" alt="image" src="https://github.com/user-attachments/assets/f7291e8e-fc77-4a9a-9b5e-f4782e36b1a8" />
+
+Amb la comanda mount podrem veure les rutes montades.
+
+<img width="623" height="211" alt="image" src="https://github.com/user-attachments/assets/08f639df-bc6a-44c8-acb2-c6c55fd9efd9" />
+
+Si entrem al explorador d'arxius veurem la nova entrada Z:
+
+<img width="623" height="211" alt="image" src="https://github.com/user-attachments/assets/e66fdf46-6663-4915-ae90-3b730544f052" />
+
+Si entrem veurem l'arxiu hola.
+
 ## 10.3 NFS amb LDAP
 
 <img width="404" height="54" alt="image" src="https://github.com/user-attachments/assets/3a024790-4759-4f87-908c-6d2042d5cc12" />
@@ -779,4 +799,21 @@ Al client, creem les carpetes per a les homes i editem l'arxiu fstab.
 <img width="867" height="253" alt="image" src="https://github.com/user-attachments/assets/aedfe275-b52e-4609-87e2-368ee032f5c8" />
 
 Afegim la ruta del server perquè es munti automàticament cada vegada que iniciem el ordinador.
+
+<img width="746" height="383" alt="image" src="https://github.com/user-attachments/assets/80908153-9fbc-4afa-bd33-1baccaf7fcd1" />
+
+Editem l'arxiu usu.ldif i configurem l'usuari marcel.
+
+<img width="776" height="85" alt="image" src="https://github.com/user-attachments/assets/79c29993-2b76-42bc-9ad2-fb4f69bc127a" />
+
+Apliquem l'arxiu ldif amb ldapapp
+
+<img width="497" height="81" alt="image" src="https://github.com/user-attachments/assets/fb5fad34-f53c-448e-acf8-2ebe6fa71ebd" />
+
+Si entrem a la carpeta homes, veurem que l'usuari marcel encara no ha entrat ja que no hi ha cap carpeta home seva.
+
+<img width="291" height="123" alt="image" src="https://github.com/user-attachments/assets/7f9cd4f9-98c9-4521-af55-802908461606" />
+
+Comprovem que podem entrar i veiem l'usuari actual amb whoami.
+
 
