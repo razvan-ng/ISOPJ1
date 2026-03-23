@@ -77,3 +77,19 @@ Creem un softlink del repositori descarregat localment a apache per poder-hi acc
 
 Modifiquem el fitxer sources.list i afegim l'enllaç del repositori ppa apuntant al servidor.
 
+<img width="810" height="124" alt="image" src="https://github.com/user-attachments/assets/70b80897-f5f3-4fcb-8c14-1356f61b29f7" />
+
+Afegim la signatura del PPA al repositori. 
+
+<img width="810" height="255" alt="image" src="https://github.com/user-attachments/assets/9e42f32b-e844-4c94-aeb7-2f6e380f42dc" />
+
+En el moment en que fem un update veurem que la màquina està consultant al server.
+
+<img width="1098" height="258" alt="image" src="https://github.com/user-attachments/assets/28d5b344-a12d-420f-ac57-61cd674f7a14" />
+
+Intentem instal·lar chromium ungoogled ja que és un dels programes que tenim al repositori.
+
+<img width="992" height="721" alt="image" src="https://github.com/user-attachments/assets/25bd0292-25d8-4a65-9871-e295009dc1d3" />
+
+Un cop finalitzada l'instal·lació veurem que ja podrem accedir-hi.
+
