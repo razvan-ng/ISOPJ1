@@ -56,3 +56,24 @@ Provem d'instal·lar chrome i podem veure que ho està descarregant del servidor
 Comprovem al nostre calaix d'aplicacions que chrome està disponible.
 
 ## Exercici 2 ##
+
+## Servidor ##
+
+<img width="913" height="321" alt="image" src="https://github.com/user-attachments/assets/dbcd95dc-d60a-4bae-9c59-dbe7b6f07762" />
+
+Dins de sources.list afegim el PPA de xtradeb, una suite de diferentes aplicacions).
+
+<img width="842" height="439" alt="image" src="https://github.com/user-attachments/assets/ecf60550-79a3-49a0-ab35-3177c37ee9fb" />
+
+Amb la comanda apt-mirror descarreguem el contingut del repositori a la màquina.
+
+<img width="858" height="77" alt="image" src="https://github.com/user-attachments/assets/4591a1f2-394e-4762-891d-152dc5ea303d" />
+
+Creem un softlink del repositori descarregat localment a apache per poder-hi accedir des de fora.
+
+## Client ##
+
+<img width="962" height="77" alt="image" src="https://github.com/user-attachments/assets/26cdc339-52b7-4ba3-8a45-5ed2a2bcd409" />
+
+Modifiquem el fitxer sources.list i afegim l'enllaç del repositori ppa apuntant al servidor.
+
